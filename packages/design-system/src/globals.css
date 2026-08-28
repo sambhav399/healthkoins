@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&family=Lora:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&family=Lora:wght@400;500;600&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -122,14 +122,30 @@
   *,
   *::before,
   *::after {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 m-0 p-0 box-border;
+    -webkit-tap-highlight-color: transparent;
   }
 
   :focus-visible {
     @apply outline-none transition-[color,box-shadow,background-color] border-ring ring-3 ring-ring/30;
   }
 
-  .link {
-    @apply underline;
+  html,
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: normal;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
   }
 }

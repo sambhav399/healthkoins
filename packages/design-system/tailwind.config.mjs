@@ -15,7 +15,7 @@ export default {
     },
     fontFamily: {
       sans: [
-        'Maven Pro',
+        'Manrope',
         ...defaultTheme.fontFamily.sans
       ],
       serif: [

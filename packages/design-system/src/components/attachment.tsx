@@ -96,7 +96,7 @@ function AttachmentContent({
     <div
       data-slot="attachment-content"
       className={cn(
-        'max-w-full min-w-0 flex-1 leading-tight group-data-[orientation=vertical]/attachment:px-1',
+        'min-w-0 max-w-full flex-1 leading-tight group-data-[orientation=vertical]/attachment:px-1',
         className
       )}
       {...props}
@@ -112,7 +112,7 @@ function AttachmentTitle({
     <span
       data-slot="attachment-title"
       className={cn(
-        'block max-w-full min-w-0 truncate font-medium group-data-[state=processing]/attachment:shimmer group-data-[state=uploading]/attachment:shimmer',
+        'group-data-[state=processing]/attachment:shimmer group-data-[state=uploading]/attachment:shimmer block min-w-0 max-w-full truncate font-medium',
         className
       )}
       {...props}
@@ -128,7 +128,7 @@ function AttachmentDescription({
     <span
       data-slot="attachment-description"
       className={cn(
-        'mt-0.5 block min-w-0 truncate text-xs text-muted-foreground group-data-[state=error]/attachment:text-destructive/80',
+        'mt-0.5 block min-w-0 truncate text-muted-foreground text-xs group-data-[state=error]/attachment:text-destructive/80',
         'max-w-full',
         className
       )}
@@ -197,7 +197,7 @@ function AttachmentGroup({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="attachment-group"
       className={cn(
-        'flex min-w-0 scroll-fade-x snap-x snap-mandatory scroll-px-1 scrollbar-none gap-3 overflow-x-auto overscroll-x-contain py-1 *:data-[slot=attachment]:flex-none *:data-[slot=attachment]:snap-start',
+        'scroll-fade-x scrollbar-none flex min-w-0 snap-x snap-mandatory scroll-px-1 gap-3 overflow-x-auto overscroll-x-contain py-1 *:data-[slot=attachment]:flex-none *:data-[slot=attachment]:snap-start',
         className
       )}
       {...props}

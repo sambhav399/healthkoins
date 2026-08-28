@@ -10,7 +10,24 @@
     "ignoreUnknown": false,
     "includes": [
       "**",
-      "!packages/design-system/src/components"
+      "!**/node_modules",
+      "!**/.pnpm",
+      "!**/.pnpm-store",
+      "!**/dist",
+      "!**/build",
+      "!**/.out",
+      "!**/.next",
+      "!**/coverage",
+      "!**/.turbo",
+      "!**/*.log",
+      "!**/.DS_Store",
+      "!**/.idea",
+      "!**/.venv",
+      "!**/venv",
+      "!**/.cache",
+      "!**/.tsbuildinfo",
+      "!packages/design-system/src/components",
+      "!scripts"
     ]
   },
   "formatter": {
@@ -74,6 +91,7 @@
       "preset": "recommended",
       "correctness": {
         "noUnusedImports": "error",
+        "noUnusedVariables": "error",
         "useExhaustiveDependencies": "error",
         "useHookAtTopLevel": "error"
       },
@@ -87,10 +105,23 @@
           "options": {
             "style": "separatedType"
           }
+        },
+        "useSelfClosingElements": {
+          "level": "error",
+          "fix": "safe"
         }
+      },
+      "suspicious": {
+        "noConsole": "warn"
       },
       "performance": {
         "noImgElement": "error"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "fix": "safe"
+        }
       }
     }
   },
