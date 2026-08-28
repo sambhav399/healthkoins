@@ -1,0 +1,63 @@
+# ----------------------------------------
+# Line endings (force LF everywhere)
+# ----------------------------------------
+* text=auto eol=lf
+
+# ----------------------------------------
+# Source code
+# ----------------------------------------
+*.js      text diff=javascript
+*.jsx     text diff=javascript
+*.ts      text diff=typescript
+*.tsx     text diff=typescript
+*.json    text
+*.yml     text
+*.yaml    text
+*.md      text
+*.css     text
+*.scss    text
+*.html    text
+*.py      text
+*.toml    text
+*.env     text
+*.sh      text eol=lf
+
+# ----------------------------------------
+# Binary files (never try to diff)
+# ----------------------------------------
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.webp    binary
+*.ico     binary
+*.pdf     binary
+*.zip     binary
+*.gz      binary
+*.tgz     binary
+*.woff    binary
+*.woff2   binary
+*.ttf     binary
+*.eot     binary
+*.mp4     binary
+*.mov     binary
+
+# ----------------------------------------
+# Lockfiles (treat as text but large)
+# ----------------------------------------
+package-lock.json text
+pnpm-lock.yaml    text
+yarn.lock         text
+
+# ----------------------------------------
+# Generated files (reduce diff noise)
+# ----------------------------------------
+.next/** linguist-generated=true
+dist/**  linguist-generated=true
+build/** linguist-generated=true
+coverage/** linguist-generated=true
+
+# ----------------------------------------
+# Vendored code (exclude from stats)
+# ----------------------------------------
+**/vendor/** linguist-vendored

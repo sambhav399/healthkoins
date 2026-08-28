@@ -1,0 +1,161 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
+  "root": true,
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!packages/design-system/src/components"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "always",
+    "useEditorconfig": true,
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/.pnpm",
+      "!**/.pnpm-store",
+      "!**/dist",
+      "!**/build",
+      "!**/.out",
+      "!**/.next",
+      "!**/*.md",
+      "!**/coverage",
+      "!**/.turbo",
+      "!**/*.min.js",
+      "!**/*.min.css",
+      "!**/*.generated.*",
+      "!**/next-env.d.ts",
+      "!**/pnpm-lock.yaml",
+      "!**/package-lock.json",
+      "!**/yarn.lock",
+      "!**/.env",
+      "!**/.env.*",
+      "!**/.env.local",
+      "!**/.env.development.local",
+      "!**/.env.test.local",
+      "!**/.env.production.local",
+      "!**/.cache",
+      "!**/.eslintcache",
+      "!**/.tsbuildinfo",
+      "!**/*.log",
+      "!**/.DS_Store",
+      "!**/Thumbs.db",
+      "!**/.idea",
+      "!**/__pycache__",
+      "!**/*.pyc",
+      "!**/.venv",
+      "!**/venv",
+      "!**/__snapshots__",
+      "!**/*.config.js",
+      "!**/*.config.ts",
+      "**/tsup.config.ts",
+      "!**/*.d.ts"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "correctness": {
+        "noUnusedImports": "error",
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error"
+      },
+      "style": {
+        "useConsistentCurlyBraces": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useImportType": {
+          "level": "error",
+          "options": {
+            "style": "separatedType"
+          }
+        }
+      },
+      "performance": {
+        "noImgElement": "error"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "none",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
+    }
+  },
+  "html": {
+    "formatter": {
+      "indentScriptAndStyle": false,
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "*.md"
+      ],
+      "formatter": {
+        "indentWidth": 4,
+        "lineWidth": 100
+      }
+    }
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "sortBareImports": true,
+            "groups": [
+              [
+                ":URL:",
+                ":NODE:"
+              ],
+              [
+                ":PACKAGE:",
+                ":PACKAGE_WITH_PROTOCOL:",
+                "!@healthkoins/**"
+              ],
+              "@healthkoins/**",
+              [
+                ":ALIAS:",
+                ":PATH:"
+              ]
+            ]
+          }
+        }
+      }
+    }
+  }
+}

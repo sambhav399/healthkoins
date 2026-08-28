@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-luma",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@healthkoins/design-system/components",
+    "utils": "@healthkoins/design-system/lib/utils",
+    "ui": "@healthkoins/design-system/components",
+    "lib": "@healthkoins/design-system/lib",
+    "hooks": "@healthkoins/design-system/hooks"
+  },
+  "iconLibrary": "lucide"
+}

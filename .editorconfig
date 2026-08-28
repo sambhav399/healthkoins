@@ -1,0 +1,28 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Python (Black standard)
+[*.py]
+indent_size = 4
+
+# Markdown (allow trailing spaces for line breaks)
+[*.md]
+trim_trailing_whitespace = false
+
+# YAML (common infra files)
+[*.{yml,yaml}]
+indent_size = 2
+
+# Make files must use tabs
+[Makefile]
+indent_style = tab

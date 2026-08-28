@@ -1,0 +1,83 @@
+# --------------------
+# Node / JS / TS
+# --------------------
+node_modules/
+.pnpm-store/
+.pnpm/
+dist/
+build/
+out/
+coverage/
+.next/
+.turbo/
+.cache/
+.rpt2_cache/
+*.tsbuildinfo
+next-env.d.ts
+**/next-env.d.ts
+*.tgz
+
+# --------------------
+# Logs
+# --------------------
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+pnpm-error.log*
+
+# --------------------
+# Environment
+# --------------------
+.env
+.env.*
+!.env.example
+
+# --------------------
+# Python / Django
+# --------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --------------------
+# Build artifacts (monorepo apps/packages)
+# --------------------
+apps/**/dist/
+apps/**/build/
+apps/**/.next/
+apps/**/out/
+apps/**/coverage/
+
+packages/**/dist/
+packages/**/build/
+packages/**/coverage/
+
+# --------------------
+# Turborepo
+# --------------------
+.turbo/
+**/.turbo/
+
+# --------------------
+# OS / Editor
+# --------------------
+.DS_Store
+Thumbs.db
+.idea/
+
+# --------------------
+# Misc
+# --------------------
+BUILD_INFO.ts

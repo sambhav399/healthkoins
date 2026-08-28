@@ -1,0 +1,29 @@
+{
+  "name": "healthkoins",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/sambhav399/healthkoins#readme",
+  "bugs": {
+    "url": "https://github.com/sambhav399/healthkoins/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambhav399/healthkoins.git"
+  },
+  "license": "ISC",
+  "author": "Sambhav Sharma",
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.js",
+    "biome": "biome check --only=source/organizeImports --write . && biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.10",
+    "@types/node": "^26.4.0",
+    "turbo": "^2.10.12",
+    "typescript": "^7.0.2"
+  }
+}
