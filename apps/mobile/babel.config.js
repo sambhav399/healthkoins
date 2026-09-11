@@ -4,10 +4,10 @@ module.exports = {
     [
       'module-resolver',
       {
-        root: [require('path').resolve(__dirname, 'src')],
+        root: [require('node:path').resolve(__dirname, 'src')],
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
-          '@': require('path').resolve(__dirname, 'src'),
+          '@': require('node:path').resolve(__dirname, 'src'),
         },
       },
     ],

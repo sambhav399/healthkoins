@@ -19,6 +19,9 @@
   },
   "js/ts.suggest.autoImports": true,
   "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.preferences.autoImportSpecifierExcludeRegexes": [
+    "^lucide-react-native$"
+  ],
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"

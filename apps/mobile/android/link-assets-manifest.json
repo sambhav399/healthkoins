@@ -2,32 +2,32 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/Italiana/Italiana-Regular.ttf",
-      "sha1": "e10f8b2b90e4e72c4f4fc2e7ddff58198756100d"
+      "path": "src/assets/fonts/Manrope/Manrope-Bold.ttf",
+      "sha1": "dbc0b874ad8b9f3415d0e9b4e22907890ca72327"
     },
     {
-      "path": "src/assets/fonts/Quicksand/Quicksand-Bold.ttf",
-      "sha1": "111e880f4de54ccf0a7fd14f38999b9c066e46bb"
+      "path": "src/assets/fonts/Manrope/Manrope-ExtraBold.ttf",
+      "sha1": "df131208d5c08ff782fbf12c264f473d8dacd83e"
     },
     {
-      "path": "src/assets/fonts/Quicksand/Quicksand-Light.ttf",
-      "sha1": "4d3b72ff1544d92ca9a435d7e34d21eda322dd76"
+      "path": "src/assets/fonts/Manrope/Manrope-ExtraLight.ttf",
+      "sha1": "bc714297659d8d6d987142c11987df3fe6f04b4e"
     },
     {
-      "path": "src/assets/fonts/Quicksand/Quicksand-Medium.ttf",
-      "sha1": "04b8198132a4a092b10d0631500268d6a2a0f889"
+      "path": "src/assets/fonts/Manrope/Manrope-Light.ttf",
+      "sha1": "27d7897032dc0615ace6c53fd292107ae53280e5"
     },
     {
-      "path": "src/assets/fonts/Quicksand/Quicksand-Regular.ttf",
-      "sha1": "61504eaec812663121918199aac7d960229bd306"
+      "path": "src/assets/fonts/Manrope/Manrope-Medium.ttf",
+      "sha1": "b5e2c6265e0919163142bb8eac9b6450fb91f920"
     },
     {
-      "path": "src/assets/fonts/Quicksand/Quicksand-SemiBold.ttf",
-      "sha1": "339f8d3e09ad271ff12727eef33a99f7a066eee3"
+      "path": "src/assets/fonts/Manrope/Manrope-Regular.ttf",
+      "sha1": "3f36e4904a42d23273ac346047c1b6bcf067ccfc"
     },
     {
-      "path": "src/assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf",
-      "sha1": "4ee75a4e8cdc8d7cb73c9d37859d5e96da254ecb"
+      "path": "src/assets/fonts/Manrope/Manrope-SemiBold.ttf",
+      "sha1": "f7a023cd6c102b2ffa8bf729579552445970d62d"
     }
   ]
 }

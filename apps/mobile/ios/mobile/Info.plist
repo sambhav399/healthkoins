@@ -58,13 +58,13 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Quicksand-VariableFont_wght.ttf</string>
-		<string>Italiana-Regular.ttf</string>
-		<string>Quicksand-Bold.ttf</string>
-		<string>Quicksand-Medium.ttf</string>
-		<string>Quicksand-Regular.ttf</string>
-		<string>Quicksand-SemiBold.ttf</string>
-		<string>Quicksand-Light.ttf</string>
+		<string>Manrope-Bold.ttf</string>
+		<string>Manrope-ExtraBold.ttf</string>
+		<string>Manrope-ExtraLight.ttf</string>
+		<string>Manrope-Light.ttf</string>
+		<string>Manrope-Medium.ttf</string>
+		<string>Manrope-Regular.ttf</string>
+		<string>Manrope-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
