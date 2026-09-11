@@ -2,12 +2,8 @@
   "extends": "../../tsconfig.lib.json",
   "compilerOptions": {
     "paths": {
-      "@healthkoins/design-system/*": [
-        "./src/*"
-      ]
+      "@healthkoins/design-system/*": ["./src/*"]
     }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

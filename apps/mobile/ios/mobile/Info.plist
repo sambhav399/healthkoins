@@ -65,6 +65,14 @@
 		<string>Manrope-Medium.ttf</string>
 		<string>Manrope-Regular.ttf</string>
 		<string>Manrope-SemiBold.ttf</string>
+		<string>Lora-Italic.ttf</string>
+		<string>Lora-Bold.ttf</string>
+		<string>Lora-SemiBold.ttf</string>
+		<string>Lora-SemiBoldItalic.ttf</string>
+		<string>Lora-MediumItalic.ttf</string>
+		<string>Lora-Medium.ttf</string>
+		<string>Lora-BoldItalic.ttf</string>
+		<string>Lora-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

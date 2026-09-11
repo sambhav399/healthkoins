@@ -9,7 +9,6 @@
 
 // export default Scale;
 
-
 export const Scale = {
   1: 4,
   2: 8,
@@ -26,7 +25,7 @@ export const Scale = {
   13: 52,
   14: 56,
   15: 60,
-  16: 64,
+  16: 64
 };
 
 export default Scale;

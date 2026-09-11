@@ -2,6 +2,7 @@ packages:
   - 'apps/*'
   - 'packages/*'
 allowBuilds:
+  '@parcel/watcher': false
   core-js: false
   esbuild: true
   sharp: false

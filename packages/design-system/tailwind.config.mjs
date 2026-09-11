@@ -1,27 +1,16 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
-  darkMode: [
-    'class'
-  ],
-  content: [
-    '../../app/**/*.{js,ts,jsx,tsx}',
-    '../**/*.{js,ts,jsx,tsx}'
-  ],
+  darkMode: ['class'],
+  content: ['../../app/**/*.{js,ts,jsx,tsx}', '../**/*.{js,ts,jsx,tsx}'],
   theme: {
     container: {
       center: true,
       padding: '2rem'
     },
     fontFamily: {
-      sans: [
-        'Quicksand',
-        ...defaultTheme.fontFamily.sans
-      ],
-      serif: [
-        'Ialiana',
-        ...defaultTheme.fontFamily.serif
-      ]
+      sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
+      serif: ['Ialiana', ...defaultTheme.fontFamily.serif]
     },
     extend: {
       fontWeight: {

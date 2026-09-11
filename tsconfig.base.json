@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2022"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "preserve",
@@ -23,23 +19,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "paths": {
-      "@apps/*": [
-        "./apps/*"
-      ],
-      "@packages/*": [
-        "./packages/*"
-      ]
+      "@apps/*": ["./apps/*"],
+      "@packages/*": ["./packages/*"]
     },
     "incremental": true,
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    ".next",
-    "coverage"
-  ]
+  "exclude": ["node_modules", "dist", "build", ".next", "coverage"]
 }

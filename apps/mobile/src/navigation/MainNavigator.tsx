@@ -7,7 +7,11 @@ const Stack = createNativeStackNavigator<MainStackParamList>();
 
 export function MainNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+    >
       <Stack.Screen name={ROUTES.MAIN.TABS} component={TabNavigator} />
     </Stack.Navigator>
   );

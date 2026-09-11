@@ -5,18 +5,18 @@ export const ROUTES = {
     REGISTER: 'Register',
     FORGOT_PASSWORD: 'ForgotPassword',
     VERIFY_EMAIL: 'VerifyEmail',
-    RESET_PASSWORD: 'ResetPassword',
+    RESET_PASSWORD: 'ResetPassword'
   },
   MAIN: {
-    TABS: 'Tabs',
+    TABS: 'Tabs'
   },
   TABS: {
     HOME: 'Home',
     PLAY: 'Play',
     GROUPS: 'Groups',
     FEED: 'Feed',
-    RANKS: 'Ranks',
-  },
+    RANKS: 'Ranks'
+  }
 } as const;
 
 export default ROUTES;

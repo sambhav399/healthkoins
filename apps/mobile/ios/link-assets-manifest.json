@@ -2,6 +2,38 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/Lora/Lora-Bold.ttf",
+      "sha1": "e24126e8c27fdd834acb1ccf27054aeeb90ef492"
+    },
+    {
+      "path": "src/assets/fonts/Lora/Lora-BoldItalic.ttf",
+      "sha1": "2692dfa69674873703a1b51319654fc41ee894ca"
+    },
+    {
+      "path": "src/assets/fonts/Lora/Lora-Italic.ttf",
+      "sha1": "af3df0dfa62a44dfb75be69e1cdc38c2cdfe2b89"
+    },
+    {
+      "path": "src/assets/fonts/Lora/Lora-Medium.ttf",
+      "sha1": "1eb9610f2d31ed20319568b516e8328de69c5b2a"
+    },
+    {
+      "path": "src/assets/fonts/Lora/Lora-MediumItalic.ttf",
+      "sha1": "783ff5bc6cf1db6aebe10562c3a76316e045ab5f"
+    },
+    {
+      "path": "src/assets/fonts/Lora/Lora-Regular.ttf",
+      "sha1": "2f0de70df8ae30d4e64fffcb8850fc9b111365c3"
+    },
+    {
+      "path": "src/assets/fonts/Lora/Lora-SemiBold.ttf",
+      "sha1": "7850da50ade64e68ce01cd318716b0b2927a8b9b"
+    },
+    {
+      "path": "src/assets/fonts/Lora/Lora-SemiBoldItalic.ttf",
+      "sha1": "7e2b76b06edcac666c056446b01ac59cd9a70d55"
+    },
+    {
       "path": "src/assets/fonts/Manrope/Manrope-Bold.ttf",
       "sha1": "dbc0b874ad8b9f3415d0e9b4e22907890ca72327"
     },

@@ -6,8 +6,16 @@ export type AuthStackParamList = {
   [ROUTES.AUTH.LOGIN]: undefined;
   [ROUTES.AUTH.REGISTER]: undefined;
   [ROUTES.AUTH.FORGOT_PASSWORD]: undefined;
-  [ROUTES.AUTH.VERIFY_EMAIL]: { email: string } | undefined;
-  [ROUTES.AUTH.RESET_PASSWORD]: { token: string } | undefined;
+  [ROUTES.AUTH.VERIFY_EMAIL]:
+    | {
+        email: string;
+      }
+    | undefined;
+  [ROUTES.AUTH.RESET_PASSWORD]:
+    | {
+        token: string;
+      }
+    | undefined;
 };
 
 export type TabParamList = {
@@ -24,6 +32,6 @@ export type MainStackParamList = {
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends AuthStackParamList, MainStackParamList { }
+    interface RootParamList extends AuthStackParamList, MainStackParamList {}
   }
 }

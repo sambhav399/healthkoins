@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 24,
+    padding: 24
   },
   title: {
-    ...Theme.FONT_SIZE.Heading2,
-  },
+    ...Theme.FONT_SIZE.Heading2
+  }
 });

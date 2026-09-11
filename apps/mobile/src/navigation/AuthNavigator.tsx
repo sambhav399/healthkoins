@@ -21,9 +21,15 @@ export function AuthNavigator() {
       <Stack.Screen name={ROUTES.AUTH.WELCOME} component={Welcome} />
       <Stack.Screen name={ROUTES.AUTH.LOGIN} component={Login} />
       <Stack.Screen name={ROUTES.AUTH.REGISTER} component={Register} />
-      <Stack.Screen name={ROUTES.AUTH.FORGOT_PASSWORD} component={ForgotPassword} />
+      <Stack.Screen
+        name={ROUTES.AUTH.FORGOT_PASSWORD}
+        component={ForgotPassword}
+      />
       <Stack.Screen name={ROUTES.AUTH.VERIFY_EMAIL} component={VerifyEmail} />
-      <Stack.Screen name={ROUTES.AUTH.RESET_PASSWORD} component={ResetPassword} />
+      <Stack.Screen
+        name={ROUTES.AUTH.RESET_PASSWORD}
+        component={ResetPassword}
+      />
     </Stack.Navigator>
   );
 }

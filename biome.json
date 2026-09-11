@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.5.12/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.13/schema.json",
   "root": true,
   "vcs": {
     "enabled": true,
@@ -27,7 +27,13 @@
       "!**/.cache",
       "!**/.tsbuildinfo",
       "!packages/design-system/src/components",
-      "!scripts"
+      "!scripts",
+      "!**/ios",
+      "!**/android",
+      "!**/vendor",
+      "!**/*.xcodeproj",
+      "!**/*.xcworkspace",
+      "!**/Pods"
     ]
   },
   "formatter": {
@@ -40,7 +46,7 @@
     "attributePosition": "auto",
     "bracketSameLine": false,
     "bracketSpacing": true,
-    "expand": "always",
+    "expand": "auto",
     "useEditorconfig": true,
     "includes": [
       "**",
@@ -82,7 +88,13 @@
       "!**/*.config.js",
       "!**/*.config.ts",
       "**/tsup.config.ts",
-      "!**/*.d.ts"
+      "!**/*.d.ts",
+      "!**/ios",
+      "!**/android",
+      "!**/vendor",
+      "!**/*.xcodeproj",
+      "!**/*.xcworkspace",
+      "!**/Pods"
     ]
   },
   "linter": {
@@ -151,9 +163,7 @@
   },
   "overrides": [
     {
-      "includes": [
-        "*.md"
-      ],
+      "includes": ["*.md"],
       "formatter": {
         "indentWidth": 4,
         "lineWidth": 100
@@ -169,20 +179,10 @@
           "options": {
             "sortBareImports": true,
             "groups": [
-              [
-                ":URL:",
-                ":NODE:"
-              ],
-              [
-                ":PACKAGE:",
-                ":PACKAGE_WITH_PROTOCOL:",
-                "!@healthkoins/**"
-              ],
+              [":URL:", ":NODE:"],
+              [":PACKAGE:", ":PACKAGE_WITH_PROTOCOL:", "!@healthkoins/**"],
               "@healthkoins/**",
-              [
-                ":ALIAS:",
-                ":PATH:"
-              ]
+              [":ALIAS:", ":PATH:"]
             ]
           }
         }

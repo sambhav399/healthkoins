@@ -43,8 +43,5 @@
   },
   "git.autofetch": true,
   "breadcrumbs.enabled": true,
-  "cSpell.words": [
-    "healthkoins",
-    "Pressable"
-  ]
+  "cSpell.words": ["healthkoins", "Pressable"]
 }
