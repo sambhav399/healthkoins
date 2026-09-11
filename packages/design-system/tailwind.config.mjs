@@ -15,11 +15,11 @@ export default {
     },
     fontFamily: {
       sans: [
-        'Manrope',
+        'Quicksand',
         ...defaultTheme.fontFamily.sans
       ],
       serif: [
-        'Lora',
+        'Ialiana',
         ...defaultTheme.fontFamily.serif
       ]
     },
