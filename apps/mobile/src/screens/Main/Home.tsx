@@ -1,5 +1,6 @@
 import { Dimensions, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import type { SharedValue } from 'react-native-reanimated';
 import Animated, {
   interpolate,
   useAnimatedRef,
@@ -7,17 +8,22 @@ import Animated, {
   useScrollOffset
 } from 'react-native-reanimated';
 import USER_STAGES from '@/constants/USER_STAGES';
-import { Flame, ShieldCheck } from '@/design-system/Icons';
+import { Badge } from '@/design-system/components';
+import { Flame, Link2, ShieldCheck } from '@/design-system/Icons';
 import Theme from '@/design-system/Theme';
+import { stylesHero, stylesScreenHome } from '@/styles/stylesScreenHome';
 
-const { width } = Dimensions.get('window');
-const user = USER_STAGES[18 - 1];
-const IMG_HEIGHT = 400;
+const { width, height } = Dimensions.get('window');
+const user = USER_STAGES[12 - 1];
+const IMG_HEIGHT = height / 2.5;
 
-export function Home() {
-  const refScrollView = useAnimatedRef<Animated.ScrollView>();
-  const scrollOffset = useScrollOffset(refScrollView);
-  const imageAnimatedStyle = useAnimatedStyle(() => ({
+const HeroSection = ({
+  scrollOffset
+}: {
+  scrollOffset: SharedValue<number>;
+}) => {
+  const styles = stylesHero({ width: width, height: IMG_HEIGHT });
+  const heroImageAnimatedStyle = useAnimatedStyle(() => ({
     transform: [
       {
         translateY: interpolate(
@@ -37,153 +43,67 @@ export function Home() {
   }));
 
   return (
+    <View style={styles.hero}>
+      <Animated.Image
+        source={user.image}
+        style={[styles.heroImage, heroImageAnimatedStyle]}
+      />
+      <LinearGradient
+        style={styles.heroGradient}
+        colors={['transparent', Theme.COLORS.Primary[950]]}
+        start={{
+          x: 0,
+          y: 0.4
+        }}
+        end={{
+          x: 0,
+          y: 1
+        }}
+      />
+      <View style={styles.userStageDetails}>
+        <View style={styles.userStageBadges}>
+          <Badge
+            label={`Level - ${user.level}`}
+            backgroundColor={Theme.COLORS.Brand[400]}
+            color={Theme.COLORS.Default[900]}
+            icon={ShieldCheck}
+            size={Theme.SCALE[3]}
+          />
+          <Badge
+            label={`Streak - 3`}
+            backgroundColor={Theme.COLORS.Default[400]}
+            color={Theme.COLORS.Default[900]}
+            icon={Flame}
+            size={Theme.SCALE[3]}
+          />
+          <Badge
+            label={`Linked`}
+            backgroundColor={Theme.COLORS.Default[400]}
+            color={Theme.COLORS.Default[900]}
+            icon={Link2}
+            size={Theme.SCALE[3]}
+          />
+        </View>
+        <Text style={styles.userStageName}>{user.name}</Text>
+        <Text style={styles.userStageDescription}>{user.description}</Text>
+      </View>
+    </View>
+  );
+};
+
+export function Home() {
+  const styles = stylesScreenHome();
+  const refScrollView = useAnimatedRef<Animated.ScrollView>();
+  const scrollOffset = useScrollOffset(refScrollView);
+
+  return (
     <Animated.ScrollView
       ref={refScrollView}
       scrollEventThrottle={16}
-      style={{
-        backgroundColor: Theme.COLORS.Primary[950]
-      }}
-      contentContainerStyle={{
-        flex: 1
-      }}
+      style={styles.scrollView}
     >
-      <View
-        style={{
-          width,
-          height: IMG_HEIGHT,
-          justifyContent: 'flex-end'
-        }}
-      >
-        <Animated.Image
-          source={user.image}
-          style={[
-            {
-              width,
-              height: IMG_HEIGHT,
-              position: 'absolute'
-            },
-            imageAnimatedStyle
-          ]}
-        />
-        <LinearGradient
-          style={{
-            width,
-            height: IMG_HEIGHT,
-            position: 'absolute'
-          }}
-          colors={['transparent', Theme.COLORS.Primary[950]]}
-          start={{
-            x: 0,
-            y: 0.45
-          }}
-          end={{
-            x: 0,
-            y: 1
-          }}
-        />
-        <View style={[Theme.SPACING.Padding['px-4']]}>
-          <View
-            style={{
-              alignItems: 'center',
-              gap: Theme.SCALE[2]
-            }}
-          >
-            <View
-              style={{
-                flexDirection: 'row',
-                gap: Theme.SCALE[2],
-                alignItems: 'center'
-              }}
-            >
-              <View
-                style={[
-                  Theme.SPACING.Padding['py-1'],
-                  Theme.SPACING.Padding['px-2'],
-                  {
-                    backgroundColor: Theme.COLORS.Brand[400],
-                    borderRadius: 99,
-                    flexDirection: 'row',
-                    gap: Theme.SCALE[1],
-                    alignItems: 'center'
-                  }
-                ]}
-              >
-                <ShieldCheck size={Theme.SCALE[3]} />
-                <Text
-                  style={[
-                    Theme.FONT_FAMILY.Default.SemiBold,
-                    Theme.FONT_SIZE.Body3,
-                    {
-                      color: Theme.COLORS.Default[900]
-                    }
-                  ]}
-                >
-                  Level - {user.level}
-                </Text>
-              </View>
-              <View
-                style={[
-                  Theme.SPACING.Padding['py-1'],
-                  Theme.SPACING.Padding['px-2'],
-                  {
-                    backgroundColor: Theme.COLORS.Default[300],
-                    borderRadius: 99,
-                    flexDirection: 'row',
-                    gap: Theme.SCALE[1],
-                    alignItems: 'center'
-                  }
-                ]}
-              >
-                <Flame size={Theme.SCALE[3]} />
-                <Text
-                  style={[
-                    Theme.FONT_FAMILY.Default.SemiBold,
-                    Theme.FONT_SIZE.Body3,
-                    {
-                      color: Theme.COLORS.Default[900]
-                    }
-                  ]}
-                >
-                  Streak - 3
-                </Text>
-              </View>
-            </View>
-            <Text
-              style={[
-                Theme.FONT_FAMILY.Lead.Medium,
-                Theme.FONT_SIZE.Display1,
-                {
-                  color: Theme.COLORS.Brand[400]
-                }
-              ]}
-            >
-              {user.name}
-            </Text>
-          </View>
-        </View>
-      </View>
-      {/*
-      <View
-        style={[
-          Theme.SPACING.Padding['px-4'],
-          {
-            flex: 1,
-            backgroundColor: Theme.COLORS.Primary[950]
-          }
-        ]}
-      >
-        <Text
-          style={[
-            Theme.FONT_FAMILY.Default.Regular,
-            Theme.FONT_SIZE.Display1,
-            {
-              color: Theme.COLORS.Default[100]
-            }
-          ]}
-        >
-          Home
-        </Text>
-      </View> */}
+      <HeroSection scrollOffset={scrollOffset} />
+      <View style={styles.content} />
     </Animated.ScrollView>
   );
 }

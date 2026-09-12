@@ -23,10 +23,14 @@ import Groups from '@/screens/Main/Groups';
 import Home from '@/screens/Main/Home';
 import Play from '@/screens/Main/Play';
 import Ranks from '@/screens/Main/Ranks';
+import {
+  stylesCustomHeader,
+  stylesCustomTab,
+  stylesCustomTabBar
+} from '@/styles/stylesTabNavigator';
 import type { TabParamList } from '@/types/navigation';
 
 const colorFocused = Theme.COLORS.Brand[400];
-const colorTabBackground = Theme.COLORS.Primary[900];
 const Tab = createBottomTabNavigator<TabParamList>();
 const TabIcons = {
   [ROUTES.TABS.HOME]: House,
@@ -43,34 +47,13 @@ type PROPS_CustomTab = {
 };
 
 const CustomTab = memo(({ route, onPress, isFocused }: PROPS_CustomTab) => {
+  const styles = stylesCustomTab({ isFocused: isFocused });
   const Icon = TabIcons[route.name as keyof typeof TabIcons];
 
-  const color = !isFocused ? Theme.COLORS.Default[300] : colorFocused;
   return (
-    <Pressable
-      onPress={onPress}
-      style={[
-        Theme.SPACING.Padding['py-3'],
-        {
-          flex: 1,
-          alignItems: 'center',
-          borderTopWidth: 4,
-          borderTopColor: !isFocused ? colorTabBackground : colorFocused
-        }
-      ]}
-    >
-      <Icon color={color} size={Theme.SCALE[5]} />
-      <Text
-        style={[
-          Theme.FONT_SIZE.Label3,
-          Theme.FONT_FAMILY.Default.Bold,
-          {
-            color: color
-          }
-        ]}
-      >
-        {route.name}
-      </Text>
+    <Pressable onPress={onPress} style={styles.customTab}>
+      <Icon color={styles.customTabIcon.color} size={Theme.SCALE[5]} />
+      <Text style={styles.customTabLabel}>{route.name}</Text>
     </Pressable>
   );
 });
@@ -78,6 +61,7 @@ const CustomTab = memo(({ route, onPress, isFocused }: PROPS_CustomTab) => {
 const CustomTabBar = memo(
   ({ state, navigation, insets }: BottomTabBarProps) => {
     const { routes, index } = state;
+    const styles = stylesCustomTabBar({ insets: insets });
 
     const handleTabClick = (
       routeKey: string,
@@ -96,19 +80,8 @@ const CustomTabBar = memo(
     };
 
     return (
-      <View
-        style={{
-          backgroundColor: colorTabBackground,
-          paddingBottom: insets.bottom + 4
-        }}
-      >
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center'
-          }}
-        >
+      <View style={styles.customTabBarWrapper}>
+        <View style={styles.customTabBar}>
           {routes.map((route, routeIndex) => {
             const isFocused = routeIndex === index;
             return (
@@ -127,109 +100,28 @@ const CustomTabBar = memo(
 );
 
 const CustomHeader = (_props: BottomTabHeaderProps) => {
-  const inset = useSafeAreaInsets();
+  const insets = useSafeAreaInsets();
+  const styles = stylesCustomHeader({ insets: insets });
+
   return (
-    <View
-      style={{
-        backgroundColor: colorTabBackground,
-        paddingTop: inset.top
-      }}
-    >
-      <View
-        style={[
-          Theme.SPACING.Padding['py-2'],
-          Theme.SPACING.Padding['px-4'],
-          {
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }
-        ]}
-      >
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: Theme.SCALE[2]
-          }}
-        >
+    <View style={styles.customHeaderWrapper}>
+      <View style={styles.customHeader}>
+        <View style={styles.userDataWrapper}>
           <Image
             source={require('@/assets/images/avatars/level1.png')}
-            style={[
-              {
-                width: Theme.SCALE[12],
-                height: Theme.SCALE[12],
-                borderRadius: Theme.SCALE[12],
-                overflow: 'hidden'
-              }
-            ]}
+            style={styles.userImage}
           />
           <View>
-            <Text
-              style={[
-                Theme.FONT_FAMILY.Lead.Medium,
-                Theme.FONT_SIZE.Body2,
-                {
-                  color: Theme.COLORS.Default[100]
-                }
-              ]}
-            >
-              Welcome
-            </Text>
-            <Text
-              style={[
-                Theme.FONT_FAMILY.Lead.SemiBold,
-                Theme.FONT_SIZE.Body1,
-                {
-                  color: Theme.COLORS.Default[100]
-                }
-              ]}
-            >
-              Sambhav Sharma
-            </Text>
+            <Text style={styles.userGreeting}>Welcome</Text>
+            <Text style={styles.userName}>Sambhav Sharma</Text>
           </View>
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            gap: Theme.SCALE[2],
-            alignItems: 'center'
-          }}
-        >
-          <Pressable
-            style={[
-              Theme.SPACING.Padding['p-2'],
-              {
-                flexDirection: 'row',
-                gap: Theme.SCALE[2],
-                alignItems: 'center',
-                backgroundColor: Theme.COLORS.Primary[800],
-                borderRadius: 99
-              }
-            ]}
-          >
+        <View style={styles.userActionWrapper}>
+          <Pressable style={styles.userActionSync}>
             <RefreshCw color={colorFocused} size={Theme.SCALE[5]} />
-            <Text
-              style={[
-                Theme.FONT_FAMILY.Default.SemiBold,
-                Theme.FONT_SIZE.Body2,
-                {
-                  color: Theme.COLORS.Default[100]
-                }
-              ]}
-            >
-              Sync
-            </Text>
+            <Text style={styles.userActionSyncLabel}>Sync</Text>
           </Pressable>
-          <Pressable
-            style={[
-              Theme.SPACING.Padding['p-2'],
-              {
-                borderRadius: 99,
-                backgroundColor: Theme.COLORS.Primary[800]
-              }
-            ]}
-          >
+          <Pressable style={styles.userActionNotification}>
             <Bell color={colorFocused} size={Theme.SCALE[5]} />
           </Pressable>
         </View>
@@ -246,7 +138,6 @@ export function TabNavigator() {
       tabBar={(props) => <CustomTabBar {...props} />}
       screenOptions={{
         headerShown: true,
-        // headerTransparent: true,
         header: (props) => <CustomHeader {...props} />
       }}
     >
