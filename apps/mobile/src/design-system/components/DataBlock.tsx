@@ -48,7 +48,7 @@ const stylesDataBlock = () =>
     },
     dataBlock: {
       ...Theme.SPACING.Padding['p-4'],
-      borderRadius: Theme.SCALE[2],
+      borderRadius: Theme.SCALE[4],
       backgroundColor: Theme.COLORS.Primary[900]
     }
   });

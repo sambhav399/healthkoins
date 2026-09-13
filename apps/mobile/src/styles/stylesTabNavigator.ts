@@ -9,7 +9,15 @@ export const stylesCustomHeader = ({ insets }: { insets: EdgeInsets }) =>
   StyleSheet.create({
     customHeaderWrapper: {
       backgroundColor: colorTabBackground,
-      paddingTop: insets.top
+      paddingTop: insets.top,
+      shadowColor: Theme.COLORS.Primary[950],
+      shadowOffset: {
+        width: 0,
+        height: 5
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 10,
+      elevation: 10
     },
     customHeader: {
       ...Theme.SPACING.Padding['py-2'],
@@ -93,7 +101,7 @@ export const stylesCustomTabBar = ({ insets }: { insets: EdgeInsets }) =>
         width: 0,
         height: -5
       },
-      shadowOpacity: 0.25,
+      shadowOpacity: 0.5,
       shadowRadius: 10,
       elevation: 10
     },

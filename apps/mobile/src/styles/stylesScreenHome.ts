@@ -53,8 +53,7 @@ export const stylesScreenHome = () =>
       backgroundColor: Theme.COLORS.Primary[950]
     },
     content: {
-      ...Theme.SPACING.Padding['px-4'],
-      ...Theme.SPACING.Padding['py-8'],
+      ...Theme.SPACING.Padding['p-4'],
       flex: 1,
       backgroundColor: Theme.COLORS.Primary[950]
     }

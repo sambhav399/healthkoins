@@ -46,6 +46,37 @@ type PROPS_CustomTab = {
   isFocused: boolean;
 };
 
+const CustomHeader = (_props: BottomTabHeaderProps) => {
+  const insets = useSafeAreaInsets();
+  const styles = stylesCustomHeader({ insets: insets });
+
+  return (
+    <View style={styles.customHeaderWrapper}>
+      <View style={styles.customHeader}>
+        <View style={styles.userDataWrapper}>
+          <Image
+            source={require('@/assets/images/avatars/level1.png')}
+            style={styles.userImage}
+          />
+          <View>
+            <Text style={styles.userGreeting}>Welcome</Text>
+            <Text style={styles.userName}>Sambhav Sharma</Text>
+          </View>
+        </View>
+        <View style={styles.userActionWrapper}>
+          <Pressable style={styles.userActionSync}>
+            <RefreshCw color={colorFocused} size={Theme.SCALE[5]} />
+            <Text style={styles.userActionSyncLabel}>Sync</Text>
+          </Pressable>
+          <Pressable style={styles.userActionNotification}>
+            <Bell color={colorFocused} size={Theme.SCALE[5]} />
+          </Pressable>
+        </View>
+      </View>
+    </View>
+  );
+};
+
 const CustomTab = memo(({ route, onPress, isFocused }: PROPS_CustomTab) => {
   const styles = stylesCustomTab({ isFocused: isFocused });
   const Icon = TabIcons[route.name as keyof typeof TabIcons];
@@ -98,37 +129,6 @@ const CustomTabBar = memo(
     );
   }
 );
-
-const CustomHeader = (_props: BottomTabHeaderProps) => {
-  const insets = useSafeAreaInsets();
-  const styles = stylesCustomHeader({ insets: insets });
-
-  return (
-    <View style={styles.customHeaderWrapper}>
-      <View style={styles.customHeader}>
-        <View style={styles.userDataWrapper}>
-          <Image
-            source={require('@/assets/images/avatars/level1.png')}
-            style={styles.userImage}
-          />
-          <View>
-            <Text style={styles.userGreeting}>Welcome</Text>
-            <Text style={styles.userName}>Sambhav Sharma</Text>
-          </View>
-        </View>
-        <View style={styles.userActionWrapper}>
-          <Pressable style={styles.userActionSync}>
-            <RefreshCw color={colorFocused} size={Theme.SCALE[5]} />
-            <Text style={styles.userActionSyncLabel}>Sync</Text>
-          </Pressable>
-          <Pressable style={styles.userActionNotification}>
-            <Bell color={colorFocused} size={Theme.SCALE[5]} />
-          </Pressable>
-        </View>
-      </View>
-    </View>
-  );
-};
 
 export function TabNavigator() {
   return (
