@@ -9,12 +9,12 @@ import {
 } from '@/design-system/Icons';
 import Theme from '@/design-system/Theme';
 import {
-  styleFeedBlockUser,
+  stylesFeedBlockUser,
   stylesScreenFeed
 } from '@/styles/stylesScreenFeed';
 
 const FeedBlockUser = ({ userLevel }: { userLevel: number }) => {
-  const styles = styleFeedBlockUser();
+  const styles = stylesFeedBlockUser();
   const user = USER_STAGES[userLevel];
 
   return (

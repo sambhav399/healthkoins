@@ -10,14 +10,6 @@ export const stylesCustomHeader = ({ insets }: { insets: EdgeInsets }) =>
     customHeaderWrapper: {
       backgroundColor: colorTabBackground,
       paddingTop: insets.top,
-      shadowColor: Theme.COLORS.Primary[950],
-      shadowOffset: {
-        width: 0,
-        height: 5
-      },
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-      elevation: 10
     },
     customHeader: {
       ...Theme.SPACING.Padding['py-2'],
@@ -95,15 +87,7 @@ export const stylesCustomTabBar = ({ insets }: { insets: EdgeInsets }) =>
   StyleSheet.create({
     customTabBarWrapper: {
       backgroundColor: colorTabBackground,
-      paddingBottom: insets.bottom + 4,
-      shadowColor: Theme.COLORS.Primary[950],
-      shadowOffset: {
-        width: 0,
-        height: -5
-      },
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-      elevation: 10
+      paddingBottom: insets.bottom + 4
     },
     customTabBar: {
       flexDirection: 'row',

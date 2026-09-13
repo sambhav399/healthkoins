@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import Theme from '@/design-system/Theme';
 
-export const styleFeedBlockUser = () =>
+export const stylesFeedBlockUser = () =>
   StyleSheet.create({
     blockHeader: {},
     userProfile: {
