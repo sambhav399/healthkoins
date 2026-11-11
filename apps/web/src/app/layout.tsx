@@ -2,13 +2,16 @@ import { type Metadata } from 'next';
 import Script from 'next/script';
 import NextThemeProvider from '@healthkoins/design/next-theme-provider';
 import '@/app/globals.css';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import ROUTES from '../constants/ROUTES';
 
 export const metadata: Metadata = {
   title: {
-    default: 'HealthKoins | Earn Real Rewards for Walking & Fitness',
+    default: ROUTES.HOME.title,
     template: '%s | HealthKoins'
   },
-  description: 'Earn Real Rewards for Walking & Fitness'
+  description: ROUTES.HOME.description
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
@@ -37,13 +40,15 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       <body suppressHydrationWarning={true}>
         <NextThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem={true}
           disableTransitionOnChange={true}
         >
+          <Header />
           <main id="main" className="main">
             {children}
           </main>
+          <Footer />
         </NextThemeProvider>
       </body>
     </html>

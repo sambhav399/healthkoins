@@ -5,7 +5,8 @@ export default defineConfig(({ watch }) => {
 
   return {
     entry: {
-      nextConfig: 'src/nextConfig.ts'
+      nextConfig: 'src/nextConfig.ts',
+      faq: 'src/faq.ts'
     },
     outDir: 'dist',
     format: ['esm'],

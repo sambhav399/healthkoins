@@ -8,6 +8,10 @@
     "./nextConfig": {
       "types": "./dist/nextConfig.d.mts",
       "default": "./dist/nextConfig.mjs"
+    },
+    "./faq": {
+      "types": "./dist/faq.d.mts",
+      "default": "./dist/faq.mjs"
     }
   },
   "scripts": {

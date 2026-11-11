@@ -6,10 +6,13 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: '2rem'
+      padding: '2rem',
+      screens: {
+        xl: '80rem'
+      }
     },
     fontFamily: {
-      sans: ['Mulish', ...defaultTheme.fontFamily.sans],
+      sans: ['Manrope', ...defaultTheme.fontFamily.sans],
       serif: ['Lora', ...defaultTheme.fontFamily.serif]
     },
     extend: {
