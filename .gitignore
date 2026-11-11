@@ -1,0 +1,45 @@
+# --------------------
+# Node / JS / TS
+# --------------------
+node_modules/
+.pnpm-store/
+.pnpm/
+dist/
+build/
+out/
+coverage/
+.next/
+.turbo/
+.cache/
+.rpt2_cache/
+*.tsbuildinfo
+next-env.d.ts
+*.tgz
+
+# --------------------
+# Logs
+# --------------------
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+pnpm-error.log*
+
+# --------------------
+# Environment
+# --------------------
+.env
+.env.*
+!.env.example
+
+# --------------------
+# OS / Editor
+# --------------------
+.DS_Store
+Thumbs.db
+.idea/
+
+# --------------------
+# Misc
+# --------------------
+BUILD_INFO.ts

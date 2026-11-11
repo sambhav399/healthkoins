@@ -1,0 +1,2 @@
+pnpm biome-staged
+pnpm test --if-present

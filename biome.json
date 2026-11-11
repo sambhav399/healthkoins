@@ -1,0 +1,232 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
+  "root": true,
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "maxSize": 5242880,
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/build",
+      "!**/.next",
+      "!**/.turbo",
+      "!**/coverage",
+      "!**/*.tsbuildinfo",
+      "!**/.zed"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "useEditorconfig": true,
+    "includes": [
+      "**",
+      "!**/*.min.js",
+      "!**/*.min.css",
+      "!**/*.generated.*",
+      "!**/pnpm-lock.yaml",
+      "!**/*.d.ts"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "preserve",
+      "trailingCommas": "none",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error"
+      },
+      "suspicious": {
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": ["warn", "error"]
+          }
+        },
+        "noAlert": "error",
+        "noExplicitAny": "off",
+        "noDoubleEquals": {
+          "level": "error",
+          "options": {
+            "ignoreNull": true
+          }
+        },
+        "useIterableCallbackReturn": "error"
+      },
+      "style": {
+        "useBlockStatements": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useConsistentCurlyBraces": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useImportType": {
+          "level": "error",
+          "options": {
+            "style": "inlineType"
+          }
+        },
+        "useSelfClosingElements": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "noImplicitBoolean": "error",
+        "useTemplate": {
+          "level": "error",
+          "fix": "safe"
+        }
+      },
+      "complexity": {
+        "noUselessFragments": "error",
+        "noArguments": "error",
+        "useLiteralKeys": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useOptionalChain": {
+          "level": "error",
+          "fix": "safe"
+        }
+      },
+      "performance": {
+        "noImgElement": "error"
+      }
+    }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": false,
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/vite*.config*.js",
+        "**/webpack*.config.*",
+        "**/tsup.config.*",
+        "**/tsdown.config.*",
+        "**/rollup.config.*",
+        "**/eslint.config.*",
+        "**/watch-deps.js",
+        "**/scripts/**"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/__tests__/**",
+        "**/tests/**",
+        "**/*.stories.*",
+        "**/.storybook/**"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          },
+          "performance": {
+            "noImgElement": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["packages/design-system/src/components/**"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useSemanticElements": "off",
+            "useFocusableInteractive": "off",
+            "useKeyWithClickEvents": "off",
+            "noLabelWithoutControl": "off",
+            "noRedundantRoles": "off"
+          },
+          "correctness": {
+            "useExhaustiveDependencies": "warn"
+          },
+          "security": {
+            "noDangerouslySetInnerHtml": "off"
+          },
+          "suspicious": {
+            "noArrayIndexKey": "off",
+            "noDocumentCookie": "off"
+          }
+        }
+      }
+    }
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "sortBareImports": true,
+            "groups": [
+              [":URL:", ":NODE:"],
+              ["react", "react/**", "react-*", "react-*/**"],
+              [
+                ":PACKAGE:",
+                ":PACKAGE_WITH_PROTOCOL:",
+                "!react",
+                "!react/**",
+                "!react-*",
+                "!react-*/**",
+                "!@*/**"
+              ],
+              "@*/**",
+              [":ALIAS:", ":PATH:"]
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "healthkoins",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.18.0",
+      "onFail": "warn"
+    }
+  },
+  "packageManager": "pnpm@12.18.0",
+  "scripts": {
+    "clean": "node scripts/clean.js",
+    "biome": "biome check --write .",
+    "biome-staged": "node scripts/biome-staged.js",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.6",
+    "@types/node": "26.6.6",
+    "husky": "9.1.7",
+    "turbo": "2.11.10",
+    "typescript": "7.0.2"
+  }
+}
