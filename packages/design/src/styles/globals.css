@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -148,6 +148,10 @@
     @apply block;
   }
 
+  .link {
+    @apply text-primary hover:underline underline-offset-4 font-500;
+  }
+
   button:not(:disabled):not([data-disabled]),
   [role="button"]:not([aria-disabled="true"]):not([data-disabled="true"]),
   [data-slot="checkbox"]:not([data-disabled="true"]),
@@ -155,39 +159,5 @@
   [data-slot="toggle"]:not([data-disabled="true"]),
   [data-slot="slider-thumb"]:not([data-disabled="true"]) {
     @apply cursor-pointer;
-  }
-}
-
-@layer components {
-  .loader {
-    --b: no-repeat radial-gradient(farthest-side, #455675 75%, #0000);
-    --o: no-repeat radial-gradient(farthest-side, #006c73 75%, #0000);
-    --l: no-repeat radial-gradient(farthest-side, #7aa040 75%, #0000);
-    --d: no-repeat radial-gradient(farthest-side, #ec912d 75%, #0000);
-
-    margin-left: auto;
-    margin-right: auto;
-    width: 50px;
-    aspect-ratio: 1;
-    display: grid;
-
-    &::before,
-    &::after {
-      content: "";
-      grid-area: 1 / 1;
-      background:
-        var(--b) 50% 0,
-        var(--o) 100% 50%,
-        var(--l) 50% 100%,
-        var(--d) 0 50%;
-      background-size: 12px 12px;
-      animation: l12 1s infinite ease;
-    }
-  }
-
-  @keyframes l12 {
-    100% {
-      transform: rotate(1turn);
-    }
   }
 }

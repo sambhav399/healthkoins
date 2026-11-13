@@ -12,7 +12,7 @@ export default {
       }
     },
     fontFamily: {
-      sans: ['Manrope', ...defaultTheme.fontFamily.sans],
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
       serif: ['Lora', ...defaultTheme.fontFamily.serif]
     },
     extend: {

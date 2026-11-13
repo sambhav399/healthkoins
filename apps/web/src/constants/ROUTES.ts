@@ -1,4 +1,4 @@
-export type Route = Readonly<{
+export type TYPE_Route = Readonly<{
   href: string;
   title: string;
   description: string;
@@ -8,7 +8,7 @@ export type Route = Readonly<{
   pageDescription?: string;
 }>;
 
-function defineRoutes<const T extends Record<string, Route>>(
+function defineRoutes<const T extends Record<string, TYPE_Route>>(
   routes: T
 ): Readonly<T> {
   for (const route of Object.values(routes)) {
@@ -74,7 +74,7 @@ export default defineRoutes({
     href: '/privacy-policy',
     title: 'Privacy Policy',
     description:
-      'Read how HealthKoins collects, protects, and uses your information to support a secure wellness platform.',
+      'This Privacy Policy explains how HealthKoins ("we," "us," or "our") collects, uses, stores, and protects your personal information when you use our mobile application, website (healthkoins.com), and related services (collectively, the "Service"). By using the Service, you agree to the practices described in this policy.',
     label: 'Privacy Policy'
   },
 
@@ -109,4 +109,4 @@ export default defineRoutes({
       'Review the rules and conditions for using the HealthKoins website and services.',
     label: 'Terms of Use'
   }
-} satisfies Record<string, Route>);
+} satisfies Record<string, TYPE_Route>);

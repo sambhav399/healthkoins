@@ -1,0 +1,36 @@
+@reference "@healthkoins/design/globals.css";
+
+@layer {
+  #layout-auth.layout-auth {
+    @apply py-16;
+
+    .auth-data {
+      @apply grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-4 items-center;
+
+      .data-image {
+        @apply object-cover h-32 md:h-full w-full pointer-events-none;
+        @apply max-md:object-[0_25%];
+      }
+
+      .data-body {
+        @apply w-full lg:max-w-2/3 mx-auto;
+
+        .body-title {
+          @apply text-heading-3 mb-2;
+        }
+
+        .body-description {
+          @apply text-muted-foreground;
+        }
+
+        .body-content {
+          @apply my-8;
+        }
+
+        .body-footer {
+          @apply text-body-3 flex items-center justify-center gap-2;
+        }
+      }
+    }
+  }
+}

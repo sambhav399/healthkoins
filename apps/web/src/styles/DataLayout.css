@@ -3,7 +3,7 @@
 @layer {
   #layout-data.layout-data {
     .data-header {
-      @apply py-24 bg-accent;
+      @apply py-24 bg-card;
 
       .badge {
         @apply mb-8;
@@ -17,6 +17,10 @@
       .header-description {
         @apply text-body-3 sm:text-body-2 md:text-body-1;
         @apply md:w-2/3;
+      }
+
+      .header-lastUpdated {
+        @apply mt-8 text-muted-foreground text-body-3;
       }
     }
 

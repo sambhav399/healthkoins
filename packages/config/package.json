@@ -5,13 +5,25 @@
   "description": "Shared build/framework configuration presets for healthkoins applications and services.",
   "type": "module",
   "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
     "./nextConfig": {
       "types": "./dist/nextConfig.d.mts",
       "default": "./dist/nextConfig.mjs"
     },
-    "./faq": {
-      "types": "./dist/faq.d.mts",
-      "default": "./dist/faq.mjs"
+    "./DataFAQ": {
+      "types": "./dist/DataFAQ.d.mts",
+      "default": "./dist/DataFAQ.mjs"
+    },
+    "./DataPrivacyPolicy": {
+      "types": "./dist/DataPrivacyPolicy.d.mts",
+      "default": "./dist/DataPrivacyPolicy.mjs"
+    },
+    "./DataTermsOfUse": {
+      "types": "./dist/DataTermsOfUse.d.mts",
+      "default": "./dist/DataTermsOfUse.mjs"
     }
   },
   "scripts": {

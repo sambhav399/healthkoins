@@ -1,4 +1,5 @@
 import ROUTES from '@/constants/ROUTES';
+import AuthSignIn from '../../components/AuthSignIn';
 
 export const metadata = {
   title: ROUTES.SIGN_IN.title,
@@ -6,5 +7,5 @@ export const metadata = {
 };
 
 export default function SignIn() {
-  return <div className="">SignIn</div>;
+  return <AuthSignIn />;
 }

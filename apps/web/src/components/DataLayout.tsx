@@ -6,23 +6,28 @@ export default function DataLayout({
   title,
   description,
   label,
+  lastUpdated,
   children
 }: {
   title: string;
   description: string;
   label?: string;
+  lastUpdated?: string;
   children?: ReactNode;
 }) {
   return (
     <div id="layout-data" className="layout-data">
       <div className="data-header">
         <div className="container">
-          <Badge className="badge">{label}</Badge>
+          {label && <Badge className="badge">{label}</Badge>}
           <h1 className="header-title">{title}</h1>
           <p className="header-description">{description}</p>
+          {lastUpdated && (
+            <p className="header-lastUpdated">Last Updated: {lastUpdated}</p>
+          )}
         </div>
       </div>
-      <div className="data-body container">{children}</div>
+      {children && <div className="data-body container">{children}</div>}
     </div>
   );
 }

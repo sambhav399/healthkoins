@@ -5,8 +5,11 @@ export default defineConfig(({ watch }) => {
 
   return {
     entry: {
+      index: 'src/index.ts',
       nextConfig: 'src/nextConfig.ts',
-      faq: 'src/faq.ts'
+      DataTermsOfUse: 'src/DataTermsOfUse.ts',
+      DataPrivacyPolicy: 'src/DataPrivacyPolicy.ts',
+      DataFAQ: 'src/DataFAQ.ts'
     },
     outDir: 'dist',
     format: ['esm'],

@@ -177,7 +177,7 @@
       }
     },
     {
-      "includes": ["packages/design-system/src/components/**"],
+      "includes": ["packages/design/src/components/**"],
       "linter": {
         "rules": {
           "a11y": {

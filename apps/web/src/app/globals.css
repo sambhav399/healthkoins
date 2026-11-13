@@ -19,12 +19,118 @@
         }
 
         .navigation-link {
-          @apply block px-4 py-2;
+          @apply block relative px-4 py-2 hover:bg-muted dark:hover:bg-muted/50;
+
+          &.active::after {
+            content: "";
+            @apply absolute bottom-0 mx-auto h-0.5 w-2/3 inset-x-0 bg-primary;
+          }
         }
       }
 
       .actions {
-        @apply flex gap-2;
+        @apply flex gap-2 items-center;
+      }
+    }
+  }
+
+  #footer.footer {
+    @apply border-t bg-card;
+
+    .footer-data {
+      @apply grid grid-cols-1 md:grid-cols-2 gap-16 py-16 text-body-3;
+
+      .footer-info {
+        @apply text-center md:text-left md:max-w-2/3;
+      }
+
+      .footer-links {
+        @apply grid grid-cols-2 gap-3 justify-items-start;
+
+        .footer-link {
+          @apply relative pb-1;
+
+          &:not(.active) {
+            @apply hover:underline;
+          }
+
+          &.active::after {
+            content: "";
+            @apply absolute bottom-0 h-0.5 w-2/3 inset-x-0 bg-primary;
+          }
+        }
+      }
+    }
+
+    .footer-copyright {
+      @apply border-t text-body-4 text-muted-foreground py-8 text-center;
+    }
+  }
+}
+
+@layer {
+  .data-list {
+    counter-reset: data-list;
+
+    .data-list-item {
+      @apply mb-12 last:mb-0;
+      counter-reset: data-section;
+
+      .item-title {
+        @apply mb-8 pb-4 text-heading-5 font-600 relative;
+        counter-increment: data-list;
+
+        &::after {
+          content: "";
+          @apply absolute inset-x-0 bottom-0 w-16 h-0.5 bg-primary;
+        }
+      }
+
+      .item-text {
+        @apply mb-4 last:mb-0 text-body-2 text-muted-foreground;
+      }
+
+      .item-list {
+        @apply mb-4 last:mb-0 text-body-2 text-muted-foreground;
+
+        .list-title {
+          @apply mb-3 text-foreground font-500;
+        }
+
+        .list-data {
+          @apply flex flex-col gap-2 pl-6;
+
+          &:is(ul) {
+            @apply list-disc;
+          }
+
+          &:is(ol) {
+            @apply list-decimal;
+          }
+
+          .data-item {
+            @apply pl-1 marker:text-primary;
+          }
+        }
+      }
+
+      .item-section {
+        @apply mb-8 last:mb-0;
+
+        .section-title {
+          @apply mb-3 text-heading-6 font-600;
+          counter-increment: data-section;
+        }
+      }
+    }
+
+    &:is(ol) {
+      .item-title::before {
+        content: counter(data-list) ". ";
+      }
+
+      .section-title::before {
+        content: counter(data-list) "." counter(data-section) ". ";
       }
     }
   }
