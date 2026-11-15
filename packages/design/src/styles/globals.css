@@ -201,8 +201,12 @@
     @apply cursor-pointer;
   }
 
+  .branding-link {
+    @apply flex;
+  }
+
   .branding {
-    @apply inline-flex items-center gap-2;
+    @apply inline-flex items-center gap-2 pointer-events-none;
 
     .brand-label {
       @apply font-serif font-600 text-heading-5;

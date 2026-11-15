@@ -1,5 +1,6 @@
 import { type Metadata } from 'next';
 import Script from 'next/script';
+import { ImageFavicon } from '@healthkoins/design/images';
 import NextThemeProvider from '@healthkoins/design/next-theme-provider';
 import '@/app/globals.css';
 import Footer from '../components/Footer';
@@ -11,7 +12,11 @@ export const metadata: Metadata = {
     default: ROUTES.HOME.title,
     template: '%s | HealthKoins'
   },
-  description: ROUTES.HOME.description
+  description: ROUTES.HOME.description,
+  icons: {
+    icon: ImageFavicon.src,
+    apple: ImageFavicon.src
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {

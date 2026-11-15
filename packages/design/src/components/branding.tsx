@@ -2,14 +2,13 @@ import { type ComponentProps } from 'react';
 import { cn } from '#lib/utils';
 import { LogoImageHealthKoins } from '../images';
 
-type BrandingProps = Omit<ComponentProps<'a'>, 'href' | 'className'> & {
-  href: string;
+type BrandingProps = Omit<ComponentProps<'span'>, 'className'> & {
   className?: string;
 };
 
-export function Branding({ href, className, ...props }: BrandingProps) {
+export function Branding({ className, ...props }: BrandingProps) {
   return (
-    <a href={href} className={cn('branding', className)} {...props}>
+    <span className={cn('branding', className)} {...props}>
       <img
         src={LogoImageHealthKoins.src}
         alt="HealthKoins"
@@ -18,6 +17,6 @@ export function Branding({ href, className, ...props }: BrandingProps) {
         className="brand-icon"
       />
       <span className="brand-label">HealthKoins</span>
-    </a>
+    </span>
   );
 }

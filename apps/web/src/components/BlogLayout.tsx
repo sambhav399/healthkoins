@@ -134,13 +134,13 @@ export default function BlogLayout({ article }: { article: Type_BlogArticle }) {
                 {article.sources.map((source) => (
                   <li key={source.text}>
                     {source.url ? (
-                      <a
+                      <Link
                         href={source.url}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {source.text}
-                      </a>
+                      </Link>
                     ) : (
                       source.text
                     )}

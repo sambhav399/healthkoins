@@ -131,7 +131,9 @@ export default function Header() {
       />
       <DrawerContent id="header-drawer" className="header-drawer">
         <DrawerHeader className="drawer-header">
-          <Branding href={ROUTES.HOME.href} />
+          <Link href={ROUTES.HOME.href} className="branding-link">
+            <Branding />
+          </Link>
           <Button
             variant="secondary"
             size="icon"
@@ -160,7 +162,9 @@ export default function Header() {
     <header id="header" className="header">
       <div className="container">
         <div className="header-data">
-          <Branding href={ROUTES.HOME.href} />
+          <Link href={ROUTES.HOME.href} className="branding-link">
+            <Branding />
+          </Link>
           <div className="data-wrapper">
             <div className="desktop-header-controls">
               {renderJSX_DesktopNavigation}

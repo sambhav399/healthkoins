@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Branding } from '@healthkoins/design/components/branding';
 import { cn } from '@healthkoins/design/lib/utils';
 import ROUTES from '../constants/ROUTES';
+import { ActionAppDownload } from './ActionAppDownload';
 
 const NAVIGATION = Object.freeze([
   ROUTES.HOME,
@@ -24,13 +25,16 @@ export default function Footer() {
       <div className="container">
         <div className="footer-data">
           <div className="footer-info">
-            <Branding href={ROUTES.HOME.href} />
+            <Link href={ROUTES.HOME.href} className="branding-link">
+              <Branding />
+            </Link>
             <p>
               HealthKoins is an independent fitness gamification platform. We
               are not affiliated with Apple Inc. or Google LLC. Rewards are
               subject to our terms of service and verification of physical
               activity.
             </p>
+            <ActionAppDownload className="mt-8" size={40} />
           </div>
           <div className="footer-links">
             {NAVIGATION.map((route) => (

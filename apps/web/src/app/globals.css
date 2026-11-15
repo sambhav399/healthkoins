@@ -108,7 +108,7 @@
       }
 
       .footer-links {
-        @apply grid grid-cols-2 gap-3 justify-items-start;
+        @apply grid grid-cols-2 gap-4 justify-items-start items-start content-start;
 
         .footer-link {
           @apply relative pb-1;
@@ -127,6 +127,44 @@
 
     .footer-copyright {
       @apply border-t text-body-4 text-muted-foreground py-8 text-center;
+    }
+  }
+}
+
+@layer {
+  #action-reveal-banner.action-reveal-banner {
+    @apply relative isolate mt-24 overflow-hidden rounded-3xl border border-border bg-card p-8 text-center sm:p-16;
+
+    .banner-content {
+      @apply relative z-10 mx-auto max-w-3xl;
+
+      .banner-title {
+        @apply mb-6 text-heading-3 font-600 sm:text-heading-2;
+      }
+
+      .banner-description {
+        @apply mx-auto mb-10 max-w-xl text-body-3 sm:text-body-2;
+      }
+    }
+  }
+}
+
+@layer {
+  .download-actions {
+    @apply flex flex-wrap items-start justify-center gap-4;
+
+    .download-store-link {
+      .download-store-image {
+        @apply pointer-events-none;
+      }
+    }
+
+    .download-web-link {
+      @apply inline-flex items-center gap-2 text-label-3;
+
+      svg {
+        @apply size-4;
+      }
     }
   }
 }

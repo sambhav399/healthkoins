@@ -60,12 +60,12 @@ export default function FAQ() {
             >
               Contact Support
             </Link>
-            <a
+            <Link
               href={`mailto:${Config.email}`}
               className={cn(buttonVariants({ variant: 'outline' }))}
             >
               Email Us
-            </a>
+            </Link>
           </div>
         </section>
       </div>
