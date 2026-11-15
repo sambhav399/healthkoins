@@ -129,7 +129,7 @@ src/
   app/                 App Router routes (one folder per route with page.tsx)
     layout.tsx         Root layout: theme init script, NextThemeProvider, Header, <main>, Footer
     globals.css        Imports "@healthkoins/design/globals.css" + app-level @layer styles
-  components/          App components (PascalCase files: Header.tsx, Footer.tsx, DataLayout.tsx)
+  components/          App components (PascalCase; feature-first names group related files, e.g. BlogLayout.tsx)
   constants/ROUTES.ts  Single source of truth for routes + SEO metadata
   styles/              Per-feature CSS (PascalCase: DataLayout.css, AuthLayout.css)
   utils/renderText.tsx Replaces {email}/{contact} placeholders in config content with links
@@ -170,6 +170,10 @@ export default function FAQ() {
 - Content/legal pages (FAQ, privacy policy, terms) use `DataLayout`, render their data inline in the page (no extra render component), and share the `data-list` classes (`data-list`, `data-list-item`, `item-title`, `item-text`, `item-list`, `list-title`, `list-data`, `data-item`, `item-section`, `section-title`) styled once in `globals.css`.
 - Pages are Server Components by default. Add `'use client'` only to components that need state, effects, or browser APIs (e.g. `Header`, `Footer` use `usePathname`).
 - Use `next/image` for images and `next/link` for navigation.
+- Use `Button` from `@healthkoins/design/components/button` for interactive button elements; do not create native `<button>` elements in app code. Set variants with the component's `variant` prop.
+- For `Link` or another non-button element styled as a button, use `buttonVariants` from `@healthkoins/design/components/button`; do not use `Button` for navigation links.
+- Use `cn` from `@healthkoins/design/lib/utils` in apps and the local `#lib/utils` alias inside the design package. Import icons from `@healthkoins/design/icons`, not directly from `lucide-react`.
+- For user-visible async content that would otherwise leave a blank area, use `Spinner` from `@healthkoins/design/components/spinner` as the loading or Suspense fallback instead of `null`.
 
 ### Styling (no inline Tailwind utilities in JSX)
 
@@ -185,9 +189,13 @@ How the CSS is written:
 
 - Wrap rules in an unnamed `@layer { ... }`.
 - Scope each block under the component's root, using `id` + class (`#header.header`, `#footer.footer`, `#layout-data.layout-data`), and give the root element both: `<div id="layout-data" className="layout-data">`.
-- Nest child selectors with native CSS nesting; use `&` for states/modifiers (`&.active::after`, `&:not(.active)`).
+- Nest related child selectors under their actual JSX parent with native CSS nesting instead of separate flat rules for each class; use `&` for states/modifiers (`&.active::after`, `&:not(.active)`). Standalone global selectors with no parent relationship may remain at the layer root.
+- Do not add max-width constraints to app page or section styles; rely on the shared container and responsive layout. Avoid decorative section divider lines; retain subtle borders where they clarify a bounded card or interactive control.
+- Use native ordered-list markers for ordered steps; do not hard-code sequence numbers in the content or replace the list markers with custom number elements.
 - Use `@apply` for everything, including responsive/dark/hover variants (`@apply text-heading-3 lg:text-heading-2 xl:text-heading-1;`). Split long lists across several `@apply` lines grouped by concern. Plain CSS is fine for things `@apply` can't express (e.g. `content: "";`).
 - Use design tokens (`bg-card`, `bg-primary`, `text-muted-foreground`, `border`, etc.) and the custom type scale (`text-display-1..4`, `text-heading-1..6`, `text-label-1..4`, `text-body-1..6`) instead of raw colors/sizes.
+- Use design-system typography utilities for font sizes throughout app and design-package source (`text-display-*`, `text-heading-*`, `text-label-*`, `text-body-*`). Do not use generic font-size utilities (such as `text-xs`, `text-sm`, or `text-base`) or arbitrary-value font sizes; use existing tokens or add a shared design-system token and register it in `cn()` when needed. Use the defined `font-400`, `font-500`, `font-600`, and `font-700` weight utilities in app and design-package source instead of named weight utilities.
+- Preserve authored text casing; do not use CSS `text-transform` or casing utilities such as `uppercase`, `lowercase`, or `capitalize`. Use the design-system `Badge` component for badge labels.
 - `container` is the only layout utility used directly in JSX (from the design system's container config).
 
 Dynamic classes: toggle **semantic** classes with `cn()` from `@healthkoins/design/lib/utils` (e.g. `cn('navigation-link', active && 'active')`) and style the state in CSS.
@@ -236,12 +244,13 @@ Source-only package; exports map points directly at `.ts/.tsx` files.
 | `@healthkoins/design/hooks/<name>`      | Hooks (e.g. `use-mobile` -> `useIsMobile`)                                                                            |
 | `@healthkoins/design/lib/utils`         | `cn()` (extended for custom font-size/weight groups)                                                                  |
 | `@healthkoins/design/icons`             | Re-export of all `lucide-react` icons                                                                                 |
-| `@healthkoins/design/logo`              | Logo/image assets (e.g. `LogoImgGoogle`)                                                                              |
+| `@healthkoins/design/images`            | Logo/image assets (e.g. `LogoImgGoogle`)                                                                              |
 | `@healthkoins/design/globals.css`       | Tailwind v4 entry, fonts, theme tokens (light `:root` / `.dark`)                                                      |
 
 Conventions:
 
-- Always import icons from `@healthkoins/design/icons`, not `lucide-react` directly.
+- Always import icons from `@healthkoins/design/icons`, not `lucide-react` directly. Do not use Unicode symbols or text glyphs as icon substitutes.
+- In design components, import `cn` from `#lib/utils` and icons from `@healthkoins/design/icons`; do not import the underlying `cn` or `lucide-react` packages directly.
 - Inside the package, use subpath imports: `#components/*`, `#lib/*`, `#hooks/*`.
 - Component files are kebab-case and lowercase (shadcn convention); components use `@base-ui/react` primitives + CVA variants + `cn()`.
 - Add new shadcn components from `packages/design` (config in [packages/design/components.json](packages/design/components.json): style `base-luma`, base color `zinc`, icon library `lucide`, RSC enabled), e.g. `pnpm dlx shadcn@latest add <component>` run inside `packages/design`. New components are automatically available via the `./components/*` export.

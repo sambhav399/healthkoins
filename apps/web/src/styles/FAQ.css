@@ -1,0 +1,21 @@
+@reference "@healthkoins/design/globals.css";
+
+@layer {
+  #page-faq.page-faq {
+    .faq-support {
+      @apply mt-16 rounded-2xl border border-border bg-card p-8 text-center md:p-10;
+
+      .support-title {
+        @apply mb-4 text-heading-4 font-600;
+      }
+
+      .support-description {
+        @apply mx-auto mb-6 max-w-2xl text-body-3 text-muted-foreground;
+      }
+
+      .support-actions {
+        @apply flex flex-col justify-center gap-4 sm:flex-row;
+      }
+    }
+  }
+}

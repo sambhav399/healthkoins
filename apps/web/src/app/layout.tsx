@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <NextThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem={true}
+          enableSystem={false}
           disableTransitionOnChange={true}
         >
           <Header />

@@ -1,0 +1,97 @@
+@reference "@healthkoins/design/globals.css";
+
+@layer {
+  #page-contact.contact-page {
+    @apply flex flex-col gap-12;
+
+    .contact-grid {
+      @apply grid gap-x-8 gap-y-10 md:grid-cols-2;
+
+      .contact-card {
+        @apply flex h-full flex-col border-b border-border pb-6;
+
+        .card-title {
+          @apply mb-3 text-heading-4;
+        }
+
+        .card-description {
+          @apply text-body-3 text-muted-foreground;
+        }
+
+        .card-action {
+          @apply mt-6;
+        }
+      }
+    }
+
+    :is(.social-header, .expect-section) {
+      .section-title {
+        @apply text-heading-4;
+      }
+    }
+
+    .social-section {
+      @apply flex flex-col gap-4;
+
+      .social-header {
+        @apply flex flex-col gap-2;
+
+        .section-description {
+          @apply text-body-3 text-muted-foreground;
+        }
+      }
+
+      .social-links {
+        @apply flex flex-wrap gap-3;
+
+        .social-link {
+          @apply inline-flex items-center py-1 text-body-3 font-500 text-primary underline-offset-4 hover:underline;
+        }
+      }
+    }
+
+    .cta-section {
+      .cta-card {
+        @apply flex flex-col gap-4 border-primary bg-primary/5 p-6 md:flex-row md:items-center md:justify-between rounded-4xl;
+
+        .cta-copy {
+          @apply flex flex-col gap-2;
+
+          .cta-label {
+            @apply text-label-2 font-500 text-primary;
+          }
+
+          .cta-title {
+            @apply text-heading-4;
+          }
+        }
+
+        .cta-body {
+          @apply flex flex-col items-start gap-4 md:max-w-xl;
+
+          .cta-text {
+            @apply text-body-3 text-muted-foreground;
+          }
+        }
+      }
+    }
+
+    .expect-section {
+      .expect-list {
+        @apply mt-4 list-none border-t border-border p-0;
+
+        .expect-item {
+          @apply flex items-start gap-3 border-b border-border py-4;
+
+          .expect-badge {
+            @apply mt-1 inline-flex shrink-0 text-primary;
+
+            svg {
+              @apply size-4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

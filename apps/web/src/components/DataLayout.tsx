@@ -22,12 +22,14 @@ export default function DataLayout({
           {label && <Badge className="badge">{label}</Badge>}
           <h1 className="header-title">{title}</h1>
           <p className="header-description">{description}</p>
-          {lastUpdated && (
-            <p className="header-lastUpdated">Last Updated: {lastUpdated}</p>
-          )}
         </div>
       </div>
       {children && <div className="data-body container">{children}</div>}
+      {lastUpdated && (
+        <div className="data-footer container">
+          <p className="footer-lastUpdated">Last Updated: {lastUpdated}</p>
+        </div>
+      )}
     </div>
   );
 }

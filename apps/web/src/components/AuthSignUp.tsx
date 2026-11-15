@@ -21,7 +21,7 @@ import {
   Ticket,
   UserRound
 } from '@healthkoins/design/icons';
-import { LogoImgGoogle } from '@healthkoins/design/logo';
+import { LogoImageGoogle } from '@healthkoins/design/images';
 import ROUTES from '../constants/ROUTES';
 import AuthLayout from './AuthLayout';
 
@@ -43,6 +43,7 @@ export default function AuthSignUp() {
               type="text"
               icon={UserRound}
               placeholder="username"
+              size="lg"
             />
           </Field>
           <Field>
@@ -52,6 +53,7 @@ export default function AuthSignUp() {
               type="email"
               icon={AtSign}
               placeholder="name@example.com"
+              size="lg"
             />
           </Field>
           <Field>
@@ -63,6 +65,7 @@ export default function AuthSignUp() {
               iconRight={showPassword ? Eye : EyeOff}
               iconRightClick={() => setShowPassword((s) => !s)}
               placeholder="Password"
+              size="lg"
             />
           </Field>
           <Field>
@@ -72,6 +75,7 @@ export default function AuthSignUp() {
               type="text"
               icon={Ticket}
               placeholder="HLTKNS60"
+              size="lg"
             />
           </Field>
           <Field orientation="horizontal">
@@ -91,14 +95,14 @@ export default function AuthSignUp() {
               </Link>
             </FieldLabel>
           </Field>
-          <Button>Create Account</Button>
+          <Button size="lg">Create Account</Button>
         </FieldSet>
         <Marker variant="separator">
           <MarkerContent>Elite Access</MarkerContent>
         </Marker>
-        <Button variant="outline">
+        <Button variant="outline" size="lg">
           <Image
-            src={LogoImgGoogle}
+            src={LogoImageGoogle}
             alt="Sign in with Google"
             width={14}
             height={14}

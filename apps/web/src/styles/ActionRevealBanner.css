@@ -1,0 +1,45 @@
+@reference "@healthkoins/design/globals.css";
+
+@layer {
+  #action-reveal-banner.action-reveal-banner {
+    @apply relative isolate mt-24 overflow-hidden rounded-3xl border border-border bg-card p-8 text-center sm:p-16;
+
+    .banner-content {
+      @apply relative z-10 mx-auto max-w-3xl;
+
+      .banner-title {
+        @apply mb-6 text-heading-3 font-600 sm:text-heading-2;
+      }
+
+      .banner-description {
+        @apply mx-auto mb-10 max-w-xl text-body-3 sm:text-body-2;
+      }
+
+      .banner-actions {
+        @apply flex flex-wrap items-start justify-center gap-4;
+
+        .banner-store-link {
+          @apply inline-flex focus-visible:ring-3 focus-visible:ring-ring;
+        }
+
+        .banner-store-tooltip-trigger {
+          @apply inline-flex border-0 bg-transparent p-0 focus-visible:ring-3 focus-visible:ring-ring;
+        }
+
+        :is(.banner-store-link, .banner-store-tooltip-trigger) {
+          .banner-store-image {
+            @apply block h-14 w-40 object-contain;
+          }
+        }
+
+        .banner-web-link {
+          @apply inline-flex items-center gap-2 text-label-3;
+
+          svg {
+            @apply size-4;
+          }
+        }
+      }
+    }
+  }
+}

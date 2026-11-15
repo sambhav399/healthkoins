@@ -9,7 +9,8 @@ export default defineConfig(({ watch }) => {
       nextConfig: 'src/nextConfig.ts',
       DataTermsOfUse: 'src/DataTermsOfUse.ts',
       DataPrivacyPolicy: 'src/DataPrivacyPolicy.ts',
-      DataFAQ: 'src/DataFAQ.ts'
+      DataFAQ: 'src/DataFAQ.ts',
+      DataBlog: 'src/DataBlog.ts'
     },
     outDir: 'dist',
     format: ['esm'],

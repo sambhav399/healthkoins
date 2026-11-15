@@ -13,7 +13,7 @@ import {
 import { Input } from '@healthkoins/design/components/input';
 import { Marker, MarkerContent } from '@healthkoins/design/components/marker';
 import { AtSign, Eye, EyeOff, KeyRound } from '@healthkoins/design/icons';
-import { LogoImgGoogle } from '@healthkoins/design/logo';
+import { LogoImageGoogle } from '@healthkoins/design/images';
 import ROUTES from '../constants/ROUTES';
 import AuthLayout from './AuthLayout';
 
@@ -35,6 +35,7 @@ export default function AuthSignIn() {
               type="email"
               icon={AtSign}
               placeholder="name@example.com"
+              size="lg"
             />
           </Field>
           <Field>
@@ -46,6 +47,7 @@ export default function AuthSignIn() {
               iconRight={showPassword ? Eye : EyeOff}
               iconRightClick={() => setShowPassword((s) => !s)}
               placeholder="Password"
+              size="lg"
             />
           </Field>
           <Field orientation="horizontal">
@@ -53,14 +55,14 @@ export default function AuthSignIn() {
             <FieldLabel htmlFor="remember">Remember me</FieldLabel>
             <Button variant="link">Forgot Password</Button>
           </Field>
-          <Button>Sign In</Button>
+          <Button size="lg">Sign In</Button>
         </FieldSet>
         <Marker variant="separator">
           <MarkerContent>Elite Access</MarkerContent>
         </Marker>
-        <Button variant="outline">
+        <Button variant="outline" size="lg">
           <Image
-            src={LogoImgGoogle}
+            src={LogoImageGoogle}
             alt="Sign in with Google"
             width={14}
             height={14}

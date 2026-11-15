@@ -1,0 +1,137 @@
+@reference "@healthkoins/design/globals.css";
+
+@layer {
+  #layout-blog.layout-blog {
+    .blog-topbar {
+      @apply border-b border-border bg-primary/5 dark:bg-card;
+
+      .container {
+        @apply flex min-h-14 flex-wrap items-center justify-between gap-x-6 gap-y-2 py-2;
+
+        .blog-back-link {
+          @apply inline-flex items-center gap-2 text-label-3 font-500 text-muted-foreground transition-colors hover:text-primary;
+
+          svg {
+            @apply size-4;
+          }
+        }
+
+        .blog-topbar-meta {
+          @apply flex flex-wrap items-center gap-4 text-body-4 text-muted-foreground;
+
+          .blog-peer-reviewed {
+            @apply text-label-3 font-500 text-primary;
+          }
+        }
+      }
+    }
+  }
+
+  #page-blog-list.blog-list {
+    .featured-section {
+      @apply mb-12;
+
+      .featured-article {
+        @apply block border border-border bg-card p-6 transition-colors hover:border-primary md:p-8 rounded-4xl;
+
+        .featured-copy {
+          @apply flex flex-col items-start;
+
+          .featured-badge {
+            @apply mb-2;
+          }
+
+          .featured-title {
+            @apply mt-4 text-heading-4 md:text-heading-3;
+          }
+
+          .featured-description {
+            @apply mt-3 text-body-3 text-muted-foreground sm:text-body-2;
+          }
+
+          .featured-meta {
+            @apply mt-5 flex flex-wrap gap-4 text-body-4 text-muted-foreground;
+          }
+
+          .featured-action {
+            @apply mt-6 text-body-3 font-600 text-primary;
+          }
+        }
+      }
+    }
+
+    :is(.featured-copy, .article-card) {
+      .article-category {
+        @apply text-label-3 font-500 text-primary;
+      }
+    }
+
+    nav {
+      .category-list {
+        @apply mb-10 flex list-none flex-wrap gap-3 p-0;
+      }
+    }
+
+    .article-grid {
+      @apply grid list-none gap-6 p-0 md:grid-cols-2 mb-8;
+
+      li {
+        .article-card {
+          @apply flex h-full flex-col border border-border bg-card p-6 transition-colors hover:border-primary rounded-4xl;
+
+          .article-title {
+            @apply mt-3 text-heading-5;
+          }
+
+          .article-description {
+            @apply mt-3 flex-1 text-body-3 text-muted-foreground;
+          }
+
+          .article-meta {
+            @apply mt-6 flex flex-wrap gap-4 text-body-4 text-muted-foreground;
+          }
+        }
+      }
+    }
+  }
+
+  #page-blog-article.blog-article {
+    @apply flex flex-col gap-10;
+
+    :is(.article-section, .article-faq, .article-sources) {
+      .section-title {
+        @apply mb-4 text-heading-5;
+      }
+    }
+
+    .article-sections {
+      @apply flex flex-col gap-10;
+    }
+
+    .article-sources {
+      ol {
+        @apply flex list-decimal flex-col gap-3 pl-6 text-body-3 text-muted-foreground;
+
+        li {
+          a {
+            @apply text-primary underline underline-offset-4;
+          }
+        }
+      }
+    }
+
+    :is(.article-section, .article-faq) {
+      .article-content {
+        @apply flex flex-col gap-4 text-body-2 text-muted-foreground;
+
+        ul {
+          @apply list-disc pl-6;
+        }
+
+        ol {
+          @apply list-decimal pl-6;
+        }
+      }
+    }
+  }
+}

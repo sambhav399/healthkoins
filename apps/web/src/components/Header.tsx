@@ -1,10 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NextThemeToggle } from '@healthkoins/design';
-import { Button } from '@healthkoins/design/components/button';
+import { buttonVariants } from '@healthkoins/design/components/button';
 import { useIsMobile } from '@healthkoins/design/hooks/use-mobile';
+import { LogoImageHealthKoins } from '@healthkoins/design/images';
 import { cn } from '@healthkoins/design/lib/utils';
 import ROUTES from '../constants/ROUTES';
 
@@ -28,6 +29,7 @@ export default function Header() {
             <Link
               href={route.href}
               className={cn(
+                buttonVariants({ variant: 'ghost' }),
                 'navigation-link',
                 pathName === route.href && 'active'
               )}
@@ -42,14 +44,17 @@ export default function Header() {
 
   const renderJSX_Actions = (
     <div className="actions">
-      <NextThemeToggle />
-      <Link href={ROUTES.SIGN_IN.href}>
-        <Button variant="ghost" tabIndex={-1}>
-          Sign In
-        </Button>
+      <Link
+        href={ROUTES.SIGN_IN.href}
+        className={buttonVariants({ variant: 'ghost' })}
+      >
+        Sign In
       </Link>
-      <Link href={ROUTES.SIGN_UP.href}>
-        <Button tabIndex={-1}>Get Started</Button>
+      <Link
+        href={ROUTES.SIGN_UP.href}
+        className={buttonVariants({ variant: 'default' })}
+      >
+        Get Started
       </Link>
     </div>
   );
@@ -58,7 +63,15 @@ export default function Header() {
     <header id="header" className="header">
       <div className="container">
         <div className="header-data">
-          <div className="branding">HealthKoins</div>
+          <div className="branding">
+            <Image
+              src={LogoImageHealthKoins}
+              alt="HealthKoins"
+              height={48}
+              className="brand-icon"
+            />
+            <span className="brand-label">HealthKoins</span>
+          </div>
           {!isMobile && (
             <>
               {renderJSX_Navigation}

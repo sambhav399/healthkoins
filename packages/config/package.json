@@ -13,6 +13,10 @@
       "types": "./dist/nextConfig.d.mts",
       "default": "./dist/nextConfig.mjs"
     },
+    "./DataBlog": {
+      "types": "./dist/DataBlog.d.mts",
+      "default": "./dist/DataBlog.mjs"
+    },
     "./DataFAQ": {
       "types": "./dist/DataFAQ.d.mts",
       "default": "./dist/DataFAQ.mjs"

@@ -29,10 +29,14 @@ export default defineRoutes({
 
   ABOUT: {
     href: '/about',
-    title: 'About',
+    title: 'About HealthKoins — Our Mission, Story & Team',
     description:
-      'Learn how HealthKoins helps people build healthier routines and turn everyday progress into meaningful rewards.',
-    label: 'About'
+      'Learn about HealthKoins, the fitness rewards platform that turns your daily steps and workouts into real rewards. Discover our mission, values, and how we built a healthier world.',
+    label: 'About',
+    badge: 'About Us',
+    pageTitle: 'Making Fitness Rewarding for Everyone',
+    pageDescription:
+      'HealthKoins is a fitness gamification platform that rewards you for every step you take and every calorie you burn. We believe that staying healthy should come with real incentives - not just another step counter.'
   },
 
   BLOG: {

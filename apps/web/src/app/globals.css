@@ -2,10 +2,10 @@
 
 @layer {
   #header.header {
-    @apply border-b;
+    @apply border-b bg-background;
 
     .header-data {
-      @apply h-16 flex items-center gap-8;
+      @apply h-20 flex items-center gap-4;
 
       .navigation {
         @apply flex-1;
@@ -15,15 +15,15 @@
 
           .navigation-list-item {
             @apply block;
-          }
-        }
 
-        .navigation-link {
-          @apply block relative px-4 py-2 hover:bg-muted dark:hover:bg-muted/50;
+            .navigation-link {
+              @apply block relative px-4 py-2 hover:bg-muted dark:hover:bg-muted/50;
 
-          &.active::after {
-            content: "";
-            @apply absolute bottom-0 mx-auto h-0.5 w-2/3 inset-x-0 bg-primary;
+              &.active::after {
+                content: "";
+                @apply absolute bottom-0 mx-auto h-0.5 w-2/3 inset-x-0 bg-primary;
+              }
+            }
           }
         }
       }

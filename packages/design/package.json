@@ -9,7 +9,7 @@
     "./hooks/*": "./src/hooks/*.ts",
     "./lib/*": "./src/lib/*.ts",
     "./icons": "./src/icons.ts",
-    "./logo": "./src/logo/index.ts",
+    "./images": "./src/images/index.ts",
     "./globals.css": "./src/styles/globals.css",
     "./next-theme-provider": "./src/theme/next-theme-provider.tsx",
     "./next-theme-toggle": "./src/theme/next-theme-toggle.tsx"

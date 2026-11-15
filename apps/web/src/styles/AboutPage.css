@@ -1,0 +1,147 @@
+@reference "@healthkoins/design/globals.css";
+
+@layer {
+  #page-about.about-page {
+    @apply flex flex-col gap-16;
+
+    .about-section {
+      @apply flex flex-col gap-6;
+
+      &:not(.stats-section) {
+        @apply border-b border-border/50 pb-12;
+      }
+
+      .section-title {
+        @apply text-heading-3;
+      }
+    }
+
+    .story-copy {
+      @apply flex flex-col gap-6 text-body-2 text-muted-foreground;
+    }
+
+    .mission-section {
+      .mission-intro {
+        @apply text-body-2 text-muted-foreground;
+      }
+
+      .mission-grid {
+        @apply grid list-none gap-8 p-0 md:grid-cols-3;
+
+        .mission-item {
+          @apply flex flex-col items-start gap-3;
+
+          .mission-icon {
+            @apply size-6 text-primary;
+          }
+
+          .mission-title {
+            @apply text-heading-6;
+          }
+
+          .mission-description {
+            @apply text-body-3 text-muted-foreground;
+          }
+        }
+      }
+    }
+
+    .steps-section {
+      .steps-list {
+        @apply list-decimal pl-6;
+
+        .step-item {
+          @apply mb-8 pl-2 last:mb-0;
+
+          .step-copy {
+            @apply flex flex-col gap-2;
+
+            .step-title {
+              @apply text-heading-5;
+            }
+
+            .step-description {
+              @apply text-body-3 text-muted-foreground;
+            }
+          }
+        }
+      }
+    }
+
+    .features-section {
+      .features-grid {
+        @apply grid list-none gap-4 p-0 sm:grid-cols-2;
+
+        .feature-item {
+          @apply flex flex-col items-start gap-3 border border-border bg-card p-6 rounded-4xl;
+
+          .feature-icon {
+            @apply size-6 text-primary;
+          }
+
+          .feature-title {
+            @apply text-heading-6;
+          }
+
+          .feature-description {
+            @apply text-body-3 text-muted-foreground;
+          }
+        }
+      }
+    }
+
+    .values-section {
+      .values-grid {
+        @apply grid list-none gap-x-8 gap-y-6 p-0 sm:grid-cols-2;
+
+        .value-item {
+          .value-title {
+            @apply mb-2 text-heading-6;
+          }
+
+          .value-description {
+            @apply text-body-3 text-muted-foreground;
+          }
+        }
+      }
+    }
+
+    .stats-section {
+      .stats-grid {
+        @apply grid list-none grid-cols-2 gap-6 py-8 sm:grid-cols-4;
+
+        .stat-item {
+          @apply flex flex-col gap-2;
+
+          .stat-value {
+            @apply text-heading-2 font-600 text-primary;
+          }
+
+          .stat-label {
+            @apply text-body-4 text-muted-foreground;
+          }
+        }
+      }
+    }
+
+    .about-cta {
+      @apply grid gap-6 bg-primary/5 p-6 md:grid-cols-2 md:items-start md:p-8 rounded-4xl;
+
+      .cta-copy {
+        @apply flex flex-col gap-3;
+
+        .cta-title {
+          @apply text-heading-4;
+        }
+
+        .cta-description {
+          @apply text-body-3 text-muted-foreground;
+        }
+      }
+
+      .cta-actions {
+        @apply flex flex-wrap gap-3 md:justify-end;
+      }
+    }
+  }
+}
