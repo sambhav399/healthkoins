@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Branding } from '@healthkoins/design/components/branding';
 import { cn } from '@healthkoins/design/lib/utils';
 import ROUTES from '../constants/ROUTES';
 
@@ -23,9 +24,13 @@ export default function Footer() {
       <div className="container">
         <div className="footer-data">
           <div className="footer-info">
-            HealthKoins is an independent fitness gamification platform. We are
-            not affiliated with Apple Inc. or Google LLC. Rewards are subject to
-            our terms of service and verification of physical activity.
+            <Branding href={ROUTES.HOME.href} />
+            <p>
+              HealthKoins is an independent fitness gamification platform. We
+              are not affiliated with Apple Inc. or Google LLC. Rewards are
+              subject to our terms of service and verification of physical
+              activity.
+            </p>
           </div>
           <div className="footer-links">
             {NAVIGATION.map((route) => (

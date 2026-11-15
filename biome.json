@@ -190,6 +190,9 @@
           "correctness": {
             "useExhaustiveDependencies": "warn"
           },
+          "performance": {
+            "noImgElement": "off"
+          },
           "security": {
             "noDangerouslySetInnerHtml": "off"
           },

@@ -5,8 +5,26 @@
     @apply border-b bg-background;
 
     .header-data {
-      @apply h-20 flex items-center gap-4;
+      @apply h-20 flex items-center justify-between gap-4;
 
+      .data-wrapper {
+        @apply flex flex-1 items-center justify-end gap-4;
+
+        .desktop-header-controls {
+          @apply hidden flex-1 items-center gap-4 lg:flex;
+        }
+
+        .tablet-header-actions {
+          @apply hidden items-center gap-2 md:flex lg:hidden;
+        }
+
+        .mobile-header-controls {
+          @apply flex lg:hidden;
+        }
+      }
+    }
+
+    :where(.header-data .data-wrapper .desktop-header-controls) {
       .navigation {
         @apply flex-1;
 
@@ -17,11 +35,15 @@
             @apply block;
 
             .navigation-link {
-              @apply block relative px-4 py-2 hover:bg-muted dark:hover:bg-muted/50;
+              @apply block px-4 py-2 hover:bg-muted dark:hover:bg-muted/50;
 
-              &.active::after {
-                content: "";
-                @apply absolute bottom-0 mx-auto h-0.5 w-2/3 inset-x-0 bg-primary;
+              &.active {
+                @apply text-primary relative;
+
+                &::after {
+                  content: "";
+                  @apply absolute bottom-0 mx-auto h-0.5 w-2/3 inset-x-0 bg-primary;
+                }
               }
             }
           }
@@ -34,6 +56,47 @@
     }
   }
 
+  #header-drawer.header-drawer {
+    .drawer-header {
+      @apply flex flex-row items-start justify-between mb-4;
+    }
+
+    .drawer-footer {
+      @apply px-8 pb-8 gap-4;
+    }
+
+    .navigation {
+      .navigation-list {
+        @apply flex flex-col gap-0;
+
+        .navigation-list-item {
+          @apply block;
+
+          .navigation-link {
+            @apply block w-full h-fit rounded-none py-3 px-8;
+
+            &.active {
+              @apply text-primary relative;
+
+              &::after {
+                content: "";
+                @apply absolute left-0 top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .actions {
+      @apply flex flex-col gap-3 p-8;
+    }
+
+    .drawer-mobile-actions {
+      @apply md:hidden;
+    }
+  }
+
   #footer.footer {
     @apply border-t bg-card;
 
@@ -41,7 +104,7 @@
       @apply grid grid-cols-1 md:grid-cols-2 gap-16 py-16 text-body-3;
 
       .footer-info {
-        @apply text-center md:text-left md:max-w-2/3;
+        @apply text-center md:text-left md:max-w-2/3 flex flex-col items-center md:items-start gap-4;
       }
 
       .footer-links {
