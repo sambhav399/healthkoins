@@ -14,7 +14,7 @@
 
         .header-title {
           @apply mb-4;
-          @apply text-heading-3 lg:text-heading-2 xl:text-heading-1;
+          @apply text-heading-3 lg:text-heading-2 xl:text-heading-1 font-serif;
         }
 
         .header-description {

@@ -12,7 +12,7 @@ export default {
       }
     },
     fontFamily: {
-      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      sans: ['Mulish', ...defaultTheme.fontFamily.sans],
       serif: ['Merriweather', ...defaultTheme.fontFamily.serif]
     },
     extend: {

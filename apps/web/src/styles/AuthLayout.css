@@ -16,7 +16,7 @@
         @apply w-full lg:max-w-2/3 mx-auto;
 
         .body-title {
-          @apply text-heading-3 mb-2;
+          @apply text-heading-3 mb-2 font-serif;
         }
 
         .body-description {

@@ -37,44 +37,56 @@ const ARTICLES = [...DataBlog.data]
   .sort((a, b) => b.publishDate.localeCompare(a.publishDate))
   .slice(0, 3);
 
-const HOME_FAQS = DataFAQ.data.flatMap((group) => group.data).slice(0, 5);
+const HOME_FAQS = DataFAQ.data.flatMap((group) => group.data).slice(0, 4);
 
 const FEATURES = [
   {
     icon: <CalendarDays className="feature-icon-symbol" aria-hidden={true} />,
+    badge: '180-Day Cycle',
     title: '6-Month Seasons & Vouchers',
     description:
-      'Build toward a clear 30,000-coin milestone over a 180-day season and redeem a ₹1,000 / $12 USD Amazon Gift Voucher.'
+      'Hit 30,000 coins across your 180-day season to claim a ₹1,000 / $12 USD Amazon Gift Voucher. Seasonal resets keep leaderboards fresh and competitive.',
+    pillars: 'Pillars: Goal Gradient • Real Rewards'
   },
   {
     icon: <Trophy className="feature-icon-symbol" aria-hidden={true} />,
+    badge: 'PvP & AI Duels',
     title: '1v1 Battle Arena',
     description:
-      'Challenge other walkers in step duels, follow your progress, and compete for a place on the global leaderboard.'
+      'Challenge rivals or train against &ldquo;The Ranger&rdquo; AI bot. Our interactive tug-of-war step meter reflects every footstep in real-time.',
+    pillars: 'Pillars: Social Facilitation • Real-time Sync'
   },
   {
     icon: <Watch className="feature-icon-symbol" aria-hidden={true} />,
+    badge: 'Health Connect & HealthKit',
     title: 'Universal Smartwatch Sync',
     description:
-      'Connect Apple Health or Google Health Connect to bring activity from your compatible watch and fitness apps together.'
+      'Connect Apple Watch, Garmin, Zepp / Amazfit, Fitbit, Noise, and boAt via Google Health Connect and Apple HealthKit. Zero battery drain.',
+    pillars: 'Pillars: Multi-Device • Deduplicated Steps'
   },
   {
     icon: <Activity className="feature-icon-symbol" aria-hidden={true} />,
-    title: 'Avatar Progression',
+    badge: 'Tiers of Glory',
+    title: 'Avatar Evolution',
     description:
-      'Turn consistent movement into visible progress as your activity earns coins and advances your avatar.'
+      'Turn consistent movement into visible progress as your activity earns coins and advances your avatar.',
+    pillars: 'Pillars: RPG Identity • Prestige Resets'
   },
   {
     icon: <Bot className="feature-icon-symbol" aria-hidden={true} />,
+    badge: 'AI Coaching',
     title: 'AI Health Insights',
     description:
-      'Explore personalized activity insights and calorie summaries based on your synced steps and activity.'
+      'Receive personalized activity insights, recovery scores, and metabolic breakdown calculated from your daily steps and active caloric expenditure.',
+    pillars: 'Pillars: Evidence-Based • Calorie Burn Analytics'
   },
   {
     icon: <Flame className="feature-icon-symbol" aria-hidden={true} />,
-    title: 'Quests & Streaks',
+    badge: 'Daily Quests & Spins',
+    title: 'Streak Defense & Spin Wheel',
     description:
-      'Stay motivated with daily quests, streak milestones, and rewards that make healthy routines more engaging.'
+      'Protect your hard-earned streaks with streak freezes and 7-day comeback missions. Open mystery boxes and spin the prize wheel for coin multipliers.',
+    pillars: 'Pillars: Loss Aversion • Variable Reinforcement'
   }
 ];
 
@@ -83,19 +95,19 @@ const STEPS = [
     icon: <Watch className="step-icon-symbol" aria-hidden={true} />,
     title: 'Sync Your Wearable',
     description:
-      'Connect Google Health Connect on Android or Apple Health on iOS to bring your activity into HealthKoins.'
+      'Connect Health Connect (Android) or Apple Health (iOS). Works effortlessly with smartwatches from Apple, Garmin, Zepp / Amazfit, Noise, and boAt.'
   },
   {
     icon: <Activity className="step-icon-symbol" aria-hidden={true} />,
     title: 'Walk, Duel & Quest',
     description:
-      'Earn coins from verified activity, complete daily quests, and challenge other members in step duels.'
+      'Earn 10 coins per 1,000 steps and 1 coin per 10 active calories. Challenge rivals in 1v1 PvP battles and claim daily quest multipliers.'
   },
   {
     icon: <Gift className="step-icon-symbol" aria-hidden={true} />,
-    title: 'Redeem Your Rewards',
+    title: 'Redeem Amazon Vouchers',
     description:
-      'Work toward the seasonal coin target and redeem eligible rewards as you build healthy habits.'
+      'Accumulate 30,000 coins across your 6-month season to unlock ₹1,000 / $12 Amazon Gift Cards, or spin the prize wheel for instant gear perks.'
   }
 ];
 
@@ -220,10 +232,10 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <span className="section-eyebrow">Engine features</span>
-            <h2 className="section-title">Built for Lasting Healthy Habits</h2>
+            <h2 className="section-title">Built for Serious Habit Formation</h2>
             <p className="section-description">
-              Make everyday movement more engaging with tools to track, compete,
-              and celebrate your progress.
+              Every screen, quest, and battle is scientifically engineered to
+              eliminate workout procrastination.
             </p>
           </div>
           <ul className="feature-grid">
@@ -246,13 +258,14 @@ export default function Home() {
             aria-label="View the global HealthKoins rankings"
           >
             <div className="rankings-copy">
-              <span className="section-eyebrow">Community rankings</span>
+              <span className="section-eyebrow">Live Meta-Rankings</span>
               <h2 className="rankings-title">
-                Find Your Place in the Global Arena
+                The Global <br /> Elite 100 Arena
               </h2>
               <p className="rankings-description">
-                See how your progress compares with walkers around the world.
-                Keep moving, climb the rankings, and celebrate every milestone.
+                Compete against the most dedicated walkers worldwide. Verified
+                steps sync every minute, updating dynamic podium positions and
+                unlocking seasonal honors.
               </p>
               <span className="rankings-action">
                 View Live Rankings
@@ -275,9 +288,10 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <span className="section-eyebrow">Getting started</span>
-            <h2 className="section-title">From First Step to Reward</h2>
+            <h2 className="section-title">From Wanderer to Legend</h2>
             <p className="section-description">
-              Three simple steps to turn your daily activity into progress.
+              Three seamless steps to convert your physical effort into
+              verifiable digital assets.
             </p>
           </div>
           <ol className="steps-grid">
@@ -296,11 +310,11 @@ export default function Home() {
         <div className="container">
           <div className="knowledge-heading">
             <div>
-              <span className="section-eyebrow">Science &amp; analysis</span>
-              <h2 className="section-title">Knowledge Hub</h2>
+              <span className="section-eyebrow">{ROUTES.BLOG.badge}</span>
+              <h2 className="section-title">{ROUTES.BLOG.pageTitle}</h2>
               <p className="section-description">
-                Explore evidence-based insights on movement, habit building, and
-                fitness technology.
+                Peer-reviewed evidence on exercise physiology, smartwatch
+                precision, and habit psychology.
               </p>
             </div>
             <Link
@@ -341,8 +355,8 @@ export default function Home() {
       <section className="home-faq-section">
         <div className="container">
           <div className="section-heading">
-            <span className="section-eyebrow">Help center</span>
-            <h2 className="section-title">Frequently Asked Questions</h2>
+            <span className="section-eyebrow">{ROUTES.FAQ.badge}</span>
+            <h2 className="section-title">{ROUTES.FAQ.pageTitle}</h2>
           </div>
           <Accordion multiple={true} className="home-faq-accordion">
             {HOME_FAQS.map((faq) => (
@@ -365,10 +379,15 @@ export default function Home() {
             <span className="section-eyebrow">
               Your next season starts here
             </span>
-            <h2 className="cta-title">Make Your Steps Count</h2>
+            <h2 className="cta-title">
+              Claim Your Spot in the
+              <br />
+              Walking Revolution
+            </h2>
             <p className="cta-description">
-              Join HealthKoins to build healthier routines, compete with
-              walkers, and earn rewards for staying active.
+              Join thousands of daily walkers leveling up their avatars, winning
+              1v1 duels, and turning steps into Amazon Gift Cards for staying
+              active.
             </p>
             <div className="cta-actions">
               <Link
