@@ -4,19 +4,22 @@ import { LogoImageHealthKoins } from '../images';
 
 type BrandingProps = Omit<ComponentProps<'span'>, 'className'> & {
   className?: string;
+  size?: 32 | 48;
 };
 
-export function Branding({ className, ...props }: BrandingProps) {
+export function Branding({ className, size = 48, ...props }: BrandingProps) {
   return (
     <span className={cn('branding', className)} {...props}>
       <img
         src={LogoImageHealthKoins.src}
         alt="HealthKoins"
-        height={48}
-        width={48}
+        height={size}
+        width={size}
         className="brand-icon"
       />
-      <span className="brand-label">HealthKoins</span>
+      <span className={cn('brand-label', size < 48 && 'size-sm')}>
+        HealthKoins
+      </span>
     </span>
   );
 }

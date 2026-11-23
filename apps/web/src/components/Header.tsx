@@ -132,7 +132,7 @@ export default function Header() {
       <DrawerContent id="header-drawer" className="header-drawer">
         <DrawerHeader className="drawer-header">
           <Link href={ROUTES.HOME.href} className="branding-link">
-            <Branding />
+            <Branding size={32} />
           </Link>
           <Button
             variant="secondary"

@@ -1,5 +1,6 @@
 import { type Metadata } from 'next';
 import Script from 'next/script';
+import ScrollToTop from '@healthkoins/design/components/scrolltotop';
 import { ImageFavicon } from '@healthkoins/design/images';
 import NextThemeProvider from '@healthkoins/design/next-theme-provider';
 import '@/app/globals.css';
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             {children}
           </main>
           <Footer />
+          <ScrollToTop />
         </NextThemeProvider>
       </body>
     </html>

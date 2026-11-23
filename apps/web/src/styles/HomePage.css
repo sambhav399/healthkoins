@@ -303,7 +303,7 @@
     }
 
     .steps-grid {
-      @apply grid list-decimal gap-6 pl-6 marker:text-primary md:grid-cols-3;
+      @apply grid list-none gap-6 marker:text-primary md:grid-cols-3;
 
       .step-card {
         @apply rounded-3xl border border-border bg-card p-6;
